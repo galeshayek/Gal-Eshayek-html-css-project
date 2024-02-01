@@ -235,7 +235,7 @@ main section.hero .iconsContainer {
   grid-column: 1/4;
   height: 200px;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-evenly;
   align-items: center;
   gap: 1rem;
@@ -252,24 +252,23 @@ main section.hero .iconsContainer picture img:hover {
 @media (max-width: 576px) {
   main section.hero {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(2, auto);
     text-align: center;
   }
-  main section.hero h1 {
+  main section.hero img {
+    grid-column: 1/2;
     grid-row: 1/2;
-    grid-column: 1/2;
-  }
-  main section.hero p {
-    grid-row: 2/3;
-    grid-column: 1/2;
-  }
-  main section.hero .btnBox {
-    grid-row: 3/4;
-    grid-column: 1/2;
     margin: 0 auto;
   }
+  main section.hero .text-box {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main section.hero .btnBox {
+    align-self: center;
+  }
   main section.hero .iconsContainer {
-    grid-row: 4/5;
+    grid-row: 3/4;
     grid-column: 1/2;
     scale: 0.8;
   }
@@ -400,7 +399,7 @@ main section.aboutMe p .cv-highlight {
 @media (max-width: 576px) {
   main section.aboutMe {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, auto);
+    grid-template-rows: repeat(3, auto);
   }
   main section.aboutMe img,
   main section.aboutMe .headingBox,
@@ -412,12 +411,12 @@ main section.aboutMe p .cv-highlight {
     grid-row: 2/3;
   }
   main section.aboutMe img {
-    grid-row: 3/4;
-    width: 150px;
+    display: none;
   }
   main section.aboutMe .headingBox h2 {
     margin-left: 0;
     text-align: center;
+    grid-row: 1/2;
   }
 }
 main section.gallery {
