@@ -1,0 +1,57 @@
+h1,
+p {
+    color: #020253;
+}
+
+label {
+    color: #2C2C2C;
+}
+
+input {
+    border: 0;
+    border-bottom: 2px solid #020253;
+    background-color: #E5EEFF;
+}
+
+button {
+    color: white;
+    background-color: #020253;
+    border: 0;
+    width: 30%;
+}
+
+.imgBox {
+    height: 100vh;
+    background: url(../assets/Coffee@2x.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+form {
+    height: 100vh;
+    direction: rtl;
+    width: 28vw;
+}
+
+@media (max-width:768px) {
+    .imgBox {
+        height: 40vh;
+        background: url(../assets/Coffee@2x.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .d-flex {
+        align-items: start;
+    }
+
+    form {
+        width: 80vw;
+    }
+}
