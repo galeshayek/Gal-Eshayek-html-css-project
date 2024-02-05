@@ -5,6 +5,10 @@ header {
     width: 40vw;
 
     @media (max-width: 1050px) {
+        p {
+            font-size: clamp(0.6rem, 4vw, 8rem);
+        }
+
         width: 80vw;
     }
 }

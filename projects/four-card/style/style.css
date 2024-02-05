@@ -43,6 +43,9 @@ header {
   header {
     width: 80vw;
   }
+  header p {
+    font-size: clamp(0.6rem, 4vw, 8rem);
+  }
 }
 
 main {
