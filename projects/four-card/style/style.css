@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 3vw, 10rem);
+  color: hsl(234, 12%, 34%);
+  font-weight: 200;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 10rem);
+  color: hsl(234, 12%, 34%);
+  font-weight: 500;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: clamp(1rem, 1.4vw, 6rem);
+  color: hsl(234, 12%, 34%);
+  font-weight: 600;
+}
+
+p {
+  font-size: clamp(0.6rem, 0.9vw, 8rem);
+  color: hsl(229, 6%, 66%);
+}
+
+header {
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 40vw;
+}
+@media (max-width: 1050px) {
+  header {
+    width: 80vw;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+main .grid-box {
+  margin-top: 5rem;
+  display: grid;
+  justify-content: center;
+  grid-template-areas: ". team ." "supervisor team calculator" "supervisor karma calculator" ". karma .";
+  gap: 3rem;
+}
+main .grid-box .card1 {
+  grid-area: team;
+  border-top: clamp(3px, 0.4vw, 20px) solid hsl(0, 78%, 62%);
+}
+main .grid-box .card2 {
+  grid-area: calculator;
+  border-top: clamp(3px, 0.4vw, 20px) solid hsl(212, 86%, 64%);
+}
+main .grid-box .card3 {
+  grid-area: karma;
+  border-top: clamp(3px, 0.4vw, 20px) solid hsl(34, 97%, 64%);
+}
+main .grid-box .card4 {
+  grid-area: supervisor;
+  border-top: clamp(3px, 0.4vw, 20px) solid hsl(180, 62%, 55%);
+}
+main .grid-box div[class^=card] {
+  position: relative;
+  width: clamp(300px, 23vw, 500px);
+  height: clamp(200px, 16vw, 300px);
+  border-radius: 5px;
+  box-shadow: 0px 7px 12px 2px hsl(229, 6%, 66%);
+  display: flex;
+  flex-flow: column;
+  padding: 2rem;
+  gap: 1rem;
+}
+main .grid-box div[class^=card] img {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  margin-left: auto;
+  width: clamp(3rem, 3vw, 10rem);
+}
+@media (max-width: 1050px) {
+  main .grid-box {
+    grid-template-areas: "supervisor" "team" "karma" "calculator";
+  }
+  main .grid-box div[class^=card] {
+    width: 80vw;
+    height: 60vw;
+  }
+  main .grid-box div[class^=card] h3 {
+    font-size: clamp(1rem, 6vw, 6rem);
+  }
+  main .grid-box div[class^=card] p {
+    font-size: clamp(0.6rem, 4vw, 8rem);
+  }
+  main .grid-box div[class^=card] img {
+    width: clamp(3rem, 15vw, 10rem);
+  }
+  main .grid-box .card2 {
+    margin-bottom: 3rem;
+  }
+}/*# sourceMappingURL=style.css.map */

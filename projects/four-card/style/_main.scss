@@ -1,0 +1,100 @@
+header {
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 2rem;
+    width: 40vw;
+
+    @media (max-width: 1050px) {
+        width: 80vw;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+
+    .grid-box {
+        margin-top: 5rem;
+        display: grid;
+        justify-content: center;
+        grid-template-areas:
+            ". team ."
+            "supervisor team calculator"
+            "supervisor karma calculator"
+            ". karma ."
+        ;
+        gap: 3rem;
+
+        .card1 {
+            grid-area: team;
+            border-top: clamp(3px, 0.4vw, 20px) solid $Red;
+        }
+
+        .card2 {
+            grid-area: calculator;
+            border-top: clamp(3px, 0.4vw, 20px) solid $Blue;
+        }
+
+        .card3 {
+            grid-area: karma;
+            border-top: clamp(3px, 0.4vw, 20px) solid $Orange;
+        }
+
+        .card4 {
+            grid-area: supervisor;
+            border-top: clamp(3px, 0.4vw, 20px) solid $Cyan;
+        }
+
+        div[class^="card"] {
+            position: relative;
+            width: clamp(300px, 23vw, 500px);
+            height: clamp(200px, 16vw, 300px);
+            border-radius: 5px;
+            box-shadow: 0px 7px 12px 2px $Grayish-Blue;
+            display: flex;
+            flex-flow: column;
+            padding: 2rem;
+            gap: 1rem;
+
+            img {
+                position: absolute;
+                bottom: 1.5rem;
+                right: 1.5rem;
+                margin-left: auto;
+                width: clamp(3rem, 3vw, 10rem);
+            }
+        }
+    }
+
+    @media (max-width: 1050px) {
+        .grid-box {
+            grid-template-areas:
+                "supervisor"
+                "team"
+                "karma"
+                "calculator"
+            ;
+
+            div[class^="card"] {
+                width: 80vw;
+                height: 60vw;
+
+                h3 {
+                    font-size: clamp(1rem, 6vw, 6rem);
+                }
+
+                p {
+                    font-size: clamp(0.6rem, 4vw, 8rem);
+                }
+
+                img {
+                    width: clamp(3rem, 15vw, 10rem);
+                }
+            }
+
+            .card2 {
+                margin-bottom: 3rem;
+            }
+        }
+    }
+}
