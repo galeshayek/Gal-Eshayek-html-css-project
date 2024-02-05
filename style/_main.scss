@@ -173,6 +173,7 @@ main {
                     margin-left: 0;
                     text-align: center;
                     grid-row: 1/2;
+                    margin: 0 auto;
                 }
             }
         }
@@ -202,9 +203,10 @@ main {
         .galleryContainer {
             display: grid;
             margin: 0 auto;
-            grid-template: "p1 p2 p2 p3"
+            grid-template:
+                "p1 p2 p2 p3"
                 "p4 p4 p5 p6"
-                "p7 p8 p9 p9";
+                "p7 p7 p8 p8";
             gap: 1em;
 
             [class^="project"] {
@@ -252,10 +254,6 @@ main {
             .project8 {
                 grid-area: p8;
             }
-
-            .project9 {
-                grid-area: p9;
-            }
         }
 
         @media (max-width: 768px) {
@@ -269,7 +267,7 @@ main {
                     "p6 p6 p6 p6"
                     "p7 p7 p7 p7"
                     "p8 p8 p8 p8"
-                    "p9 p9 p9 p9"
+
                 ;
                 gap: 1em;
             }

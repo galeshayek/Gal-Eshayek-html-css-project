@@ -289,6 +289,9 @@ main .phone-btn {
   display: none;
 }
 @media (max-width: 575px) {
+  main .text-container p {
+    width: 90vw;
+  }
   main nav {
     height: auto;
   }

@@ -417,6 +417,7 @@ main section.aboutMe p .cv-highlight {
     margin-left: 0;
     text-align: center;
     grid-row: 1/2;
+    margin: 0 auto;
   }
 }
 main section.gallery {
@@ -440,7 +441,7 @@ main section.gallery p {
 main section.gallery .galleryContainer {
   display: grid;
   margin: 0 auto;
-  grid-template: "p1 p2 p2 p3" "p4 p4 p5 p6" "p7 p8 p9 p9";
+  grid-template: "p1 p2 p2 p3" "p4 p4 p5 p6" "p7 p7 p8 p8";
   gap: 1em;
 }
 main section.gallery .galleryContainer [class^=project] {
@@ -478,12 +479,9 @@ main section.gallery .galleryContainer .project7 {
 main section.gallery .galleryContainer .project8 {
   grid-area: p8;
 }
-main section.gallery .galleryContainer .project9 {
-  grid-area: p9;
-}
 @media (max-width: 768px) {
   main section.gallery .galleryContainer {
-    grid-template: "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "p4 p4 p4 p4" "p5 p5 p5 p5" "p6 p6 p6 p6" "p7 p7 p7 p7" "p8 p8 p8 p8" "p9 p9 p9 p9";
+    grid-template: "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "p4 p4 p4 p4" "p5 p5 p5 p5" "p6 p6 p6 p6" "p7 p7 p7 p7" "p8 p8 p8 p8";
     gap: 1em;
   }
 }

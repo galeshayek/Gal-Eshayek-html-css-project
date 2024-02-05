@@ -107,6 +107,12 @@ main {
     }
 
     @media (max-width: 575px) {
+        .text-container {
+            p {
+                width: 90vw;
+            }
+        }
+
         nav {
             height: auto;
 
