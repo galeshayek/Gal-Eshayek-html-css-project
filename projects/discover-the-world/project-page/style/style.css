@@ -218,6 +218,9 @@ main .text-container {
   background-color: #385E72;
   color: #D9E4EC;
 }
+main .text-container h1 {
+  color: #D9E4EC;
+}
 main .text-container .btn-group {
   display: flex;
   flex-flow: row;

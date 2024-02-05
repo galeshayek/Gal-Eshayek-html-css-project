@@ -18,6 +18,10 @@ main {
         background-color: $complimantry-color;
         color: $misty-light;
 
+        h1 {
+            color: $misty-light;
+        }
+
         .btn-group {
             display: flex;
             flex-flow: row;
