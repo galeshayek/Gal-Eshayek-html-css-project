@@ -1,0 +1,740 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #242424;
+}
+body a {
+  text-decoration: none;
+  color: #242424;
+  font-size: clamp(1rem, 1.2vw, 2rem);
+}
+body img {
+  width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 4vw, 7rem);
+  font-family: "Lora", serif;
+  color: #385E72;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 6rem);
+  font-family: "Lora", serif;
+}
+
+h3 {
+  font-size: clamp(1.7rem, 2.3vw, 5rem);
+  font-family: "Lora", serif;
+}
+
+p {
+  font-size: clamp(1rem, 1.6vw, 2rem);
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+}
+
+nav {
+  background-color: #79C4F2;
+  height: 80px;
+}
+nav .wrapper {
+  display: flex;
+  flex-flow: column;
+}
+nav img {
+  height: 60px;
+  width: auto;
+}
+nav .navbar-collapse {
+  justify-content: center;
+  translate: -100px 0;
+}
+nav li {
+  line-height: 2;
+  text-align: center;
+  text-transform: uppercase;
+  background: linear-gradient(to top, #385E72 50%, transparent 50%);
+  background-size: 100% 200%;
+  background-position: 0 0;
+  transition: background-position 0.4s, color 0.4s;
+  border-radius: 0.7em 0.7em 0 0;
+  cursor: pointer;
+}
+nav li a {
+  padding: 0 1em;
+}
+nav li:hover {
+  background-position: 0 100%;
+}
+nav li:hover a {
+  color: #79C4F2;
+}
+
+@media (max-width: 992px) {
+  nav {
+    height: auto;
+  }
+  nav a p {
+    display: flex;
+    align-self: center;
+  }
+  nav .navbar-toggler {
+    align-self: end;
+  }
+  nav .navbar-collapse {
+    direction: rtl;
+    translate: 0 0;
+    padding: 10px 0;
+  }
+  nav li {
+    width: 7em;
+    height: 2em;
+    line-height: 2;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(to left, #385E72 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: 0 0;
+    transition: background-position 0.4s, color 0.4s;
+    border-radius: 0.7em 0 0 0.7em;
+    cursor: pointer;
+  }
+  nav li:hover {
+    background-position: 100% 0;
+  }
+  nav li:hover a {
+    color: #79C4F2;
+  }
+}
+main section.hero {
+  display: grid;
+  margin-top: 10vw;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 2em;
+  color: #242424;
+}
+main section.hero .hero-image {
+  width: 25vw;
+  box-shadow: -2em -2em 0px 0px #385E72;
+  border-radius: 15% 15% 0 15%;
+}
+main section.hero .text-box {
+  display: flex;
+  flex-flow: column;
+  grid-column: 2/4;
+  grid-row: 1/2;
+  justify-content: center;
+}
+main section.hero .text-box h1 {
+  color: #385E72;
+}
+main section.hero .text-box h2 {
+  font-size: clamp(1.7rem, 2.3vw, 5rem);
+  color: #385E72;
+  margin-bottom: 2vw;
+}
+main section.hero .text-box .btnBox {
+  position: relative;
+  height: 50px;
+  width: 155px;
+  margin: 20px;
+}
+main section.hero .text-box .btnBox a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(47, 27, 27, 0.1);
+  border-radius: 30px;
+  color: #385E72;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+main section.hero .text-box .btnBox a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+main section.hero .text-box .btnBox:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+main section.hero .text-box .btnBox:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+main section.hero .text-box .btnBox:hover a {
+  letter-spacing: 3px;
+}
+main section.hero .text-box .btnBox:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+main section.hero .text-box .btnBox::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  background: #79C4F2;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+main section.hero .text-box .btnBox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  background: #79C4F2;
+  border-radius: 10px;
+  transition: 0.5s;
+  z-index: -1;
+}
+main section.hero .iconsContainer {
+  grid-row: 2/3;
+  grid-column: 1/4;
+  height: 200px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+main section.hero .iconsContainer picture img {
+  width: clamp(70px, 7vw, 200px);
+  height: auto;
+  transition: 0.5s ease-in-out;
+}
+main section.hero .iconsContainer picture img:hover {
+  scale: 1.2;
+  translate: 0 -10px;
+}
+@media (max-width: 576px) {
+  main section.hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    text-align: center;
+  }
+  main section.hero img {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0 auto;
+  }
+  main section.hero .text-box {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  main section.hero .btnBox {
+    align-self: center;
+  }
+  main section.hero .iconsContainer {
+    grid-row: 3/4;
+    grid-column: 1/2;
+    scale: 0.8;
+  }
+}
+main section.aboutMe {
+  position: relative;
+  margin-top: 10vw;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+main section.aboutMe #aboutAncor {
+  position: absolute;
+  top: -150px;
+}
+main section.aboutMe img {
+  width: 25vw;
+  min-width: 200px;
+  grid-column: 2/3;
+  grid-row: 1/-1;
+  align-self: end;
+  box-shadow: 2em -2em 0px 0px #385E72;
+  border-radius: 0 15% 0 0;
+}
+main section.aboutMe .headingBox {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+main section.aboutMe .headingBox h2 {
+  margin-right: 40px;
+  line-height: 2.5;
+  color: #385E72;
+  border-bottom: 2px solid #385E72;
+}
+main section.aboutMe .headingBox .btnBox {
+  position: relative;
+  height: 50px;
+  width: 155px;
+  margin: 20px;
+  margin-top: 3rem;
+}
+main section.aboutMe .headingBox .btnBox a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(47, 27, 27, 0.1);
+  border-radius: 30px;
+  color: #385E72;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+main section.aboutMe .headingBox .btnBox a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+main section.aboutMe .headingBox .btnBox:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+main section.aboutMe .headingBox .btnBox:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+main section.aboutMe .headingBox .btnBox:hover a {
+  letter-spacing: 3px;
+}
+main section.aboutMe .headingBox .btnBox:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+main section.aboutMe .headingBox .btnBox::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  background: #79C4F2;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+main section.aboutMe .headingBox .btnBox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  background: #79C4F2;
+  border-radius: 10px;
+  transition: 0.5s;
+  z-index: -1;
+}
+main section.aboutMe p {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+main section.aboutMe p .cv-highlight {
+  color: #385E72;
+}
+@media (max-width: 576px) {
+  main section.aboutMe {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+  }
+  main section.aboutMe img,
+  main section.aboutMe .headingBox,
+  main section.aboutMe p {
+    grid-column: 1/2;
+    justify-self: center;
+  }
+  main section.aboutMe p {
+    grid-row: 2/3;
+  }
+  main section.aboutMe img {
+    display: none;
+  }
+  main section.aboutMe .headingBox h2 {
+    margin-left: 0;
+    text-align: center;
+    grid-row: 1/2;
+    margin: 0 auto;
+  }
+}
+main section.gallery {
+  position: relative;
+  margin-top: 10vw;
+}
+main section.gallery #galleryAncor {
+  position: absolute;
+  top: -150px;
+}
+main section.gallery h2 {
+  text-align: center;
+  margin-bottom: 2.5em;
+  color: #385E72;
+  border-bottom: 2px solid #385E72;
+  line-height: 2.5;
+}
+main section.gallery p {
+  font-size: clamp(1rem, 1.4vw, 2rem);
+}
+main section.gallery .galleryContainer {
+  display: grid;
+  margin: 0 auto;
+  grid-template: "p1 p2 p2 p3" "p4 p4 p5 p6" "p7 p7 p8 p8";
+  gap: 1em;
+}
+main section.gallery .galleryContainer [class^=project] {
+  position: relative;
+}
+main section.gallery .galleryContainer [class^=project] a {
+  background-color: #79C4F2;
+  color: #385E72;
+  transition: 0.3s ease-in-out;
+}
+main section.gallery .galleryContainer [class^=project] a:hover {
+  scale: 1.1;
+}
+main section.gallery .galleryContainer .project1 {
+  grid-area: p1;
+}
+main section.gallery .galleryContainer .project2 {
+  grid-area: p2;
+}
+main section.gallery .galleryContainer .project3 {
+  grid-area: p3;
+}
+main section.gallery .galleryContainer .project4 {
+  grid-area: p4;
+}
+main section.gallery .galleryContainer .project5 {
+  grid-area: p5;
+}
+main section.gallery .galleryContainer .project6 {
+  grid-area: p6;
+}
+main section.gallery .galleryContainer .project7 {
+  grid-area: p7;
+}
+main section.gallery .galleryContainer .project8 {
+  grid-area: p8;
+}
+@media (max-width: 768px) {
+  main section.gallery .galleryContainer {
+    grid-template: "p1 p1 p1 p1" "p2 p2 p2 p2" "p3 p3 p3 p3" "p4 p4 p4 p4" "p5 p5 p5 p5" "p6 p6 p6 p6" "p7 p7 p7 p7" "p8 p8 p8 p8";
+    gap: 1em;
+  }
+}
+main section.contact {
+  position: relative;
+  margin: 10vw 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
+  gap: 2em;
+}
+main section.contact #contactAncor {
+  position: absolute;
+  top: -150px;
+}
+main section.contact .textBox {
+  grid-column: 1/2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+main section.contact .textBox :nth-child(3) {
+  margin-top: 0.2rem;
+}
+main section.contact .textBox h3 {
+  color: #385E72;
+  border-bottom: 2px solid #385E72;
+  line-height: 2.5;
+  text-align: center;
+}
+main section.contact .textBox p {
+  text-align: center;
+}
+main section.contact form {
+  width: 70%;
+  grid-column: 2/3;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+main section.contact form #floatingTextarea {
+  height: 100px;
+}
+main section.contact form .btnBox {
+  position: relative;
+  height: 50px;
+  width: 155px;
+  margin: 20px;
+  align-self: center;
+}
+main section.contact form .btnBox a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(47, 27, 27, 0.1);
+  border-radius: 30px;
+  color: #385E72;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+main section.contact form .btnBox a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(45deg) translateX(0);
+  transition: 0.5s;
+}
+main section.contact form .btnBox:hover::before {
+  bottom: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+main section.contact form .btnBox:hover::after {
+  top: 0;
+  height: 50%;
+  width: 80%;
+  border-radius: 30px;
+  transition-delay: 0.5s;
+}
+main section.contact form .btnBox:hover a {
+  letter-spacing: 3px;
+}
+main section.contact form .btnBox:hover a::before {
+  transform: skewX(45deg) translateX(200%);
+}
+main section.contact form .btnBox::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+  width: 30px;
+  height: 10px;
+  background: #79C4F2;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+main section.contact form .btnBox::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -5px;
+  width: 30px;
+  height: 10px;
+  background: #79C4F2;
+  border-radius: 10px;
+  transition: 0.5s;
+  z-index: -1;
+}
+main section.contact form [name=submit] {
+  cursor: pointer;
+  color: #385E72;
+}
+main section.contact .imgBox {
+  width: 100%;
+}
+main section.contact .imgBox img {
+  grid-column: 3/4;
+  align-self: center;
+}
+main section.contact .btn-img-container {
+  display: flex;
+  justify-content: center;
+}
+main section.contact .btn-img-container img {
+  display: none;
+}
+@media (max-width: 576px) {
+  main section.contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    justify-items: center;
+    text-align: center;
+    gap: 2em;
+  }
+  main section.contact .textBox,
+  main section.contact form,
+  main section.contact .imgBox {
+    grid-column: 1/2;
+  }
+  main section.contact .textBox {
+    grid-row: 1/2;
+  }
+  main section.contact form {
+    grid-row: 2/3;
+    width: 90%;
+  }
+  main section.contact .imgBox {
+    display: none;
+  }
+  main section.contact .btn-img-container {
+    display: flex;
+    align-items: center;
+  }
+  main section.contact .btn-img-container img {
+    display: block;
+    width: auto;
+    height: 15vw;
+  }
+}
+
+footer {
+  display: flex;
+  flex-flow: column;
+}
+footer .links {
+  display: flex;
+  flex-flow: row;
+  background: #79C4F2;
+  padding: 2em;
+  gap: 3rem;
+  color: #385E72;
+}
+footer .links .logo {
+  width: 25%;
+}
+footer .links .logo img {
+  width: 100px;
+  padding: 0.5rem;
+}
+footer .links ul {
+  list-style-type: none;
+  display: flex;
+  flex-flow: row;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+footer .links a {
+  scale: 1.5;
+  color: #385E72;
+  transition: 0.3s ease-in-out;
+}
+footer .links a:hover {
+  scale: 1.6;
+  translate: 0 -5px;
+}
+footer .links .contactInfo {
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+footer .links .contactInfo p {
+  border-bottom: 2px solid #385E72;
+}
+footer .links .social {
+  width: 25%;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+footer .links .social p {
+  border-bottom: 2px solid #385E72;
+}
+@media (max-width: 575px) {
+  footer .links .logo {
+    display: none;
+  }
+  footer .links .contactInfo {
+    width: 50%;
+  }
+  footer .links .social {
+    width: 50%;
+  }
+}
+footer .rights {
+  background: #385E72;
+  text-align: center;
+  padding: 1em;
+  color: #D9E4EC;
+  font-size: 1rem;
+}/*# sourceMappingURL=style.css.map */

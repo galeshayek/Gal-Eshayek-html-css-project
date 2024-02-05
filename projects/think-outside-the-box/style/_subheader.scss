@@ -1,0 +1,39 @@
+.subheader {
+    margin: 3em 4vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    div {
+        background-color: $gray;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 15%;
+
+        img {
+            width: 23vw;
+        }
+
+        h2 {
+            color: $complimantry-color;
+        }
+    }
+
+    @media(min-width: $desktop) {
+        flex-flow: row;
+        margin: 3em 1em;
+
+        .iconList {
+            padding: 5%;
+
+            img {
+                width: 6vw;
+            }
+        }
+    }
+}

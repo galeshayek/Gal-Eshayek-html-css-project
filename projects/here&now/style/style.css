@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  font-family: "varela round";
+  background: transparent linear-gradient(180deg, #281EFF 0%, #2DFF8C 100%) 0% 0% no-repeat padding-box;
+}
+body h1 {
+  font-family: "satisfy";
+}
+body .container {
+  height: 100vh;
+  width: 85vw;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: white;
+}
+body .container .textWrapper {
+  width: 90%;
+}
+body .container .textWrapper h1 {
+  font-size: clamp(4rem, 10vw, 13rem);
+  font-weight: 100;
+  text-align: center;
+  text-shadow: 0px 0px 36px rgba(0, 0, 0, 0.5294117647);
+}
+body .container .textWrapper h2 {
+  font-size: clamp(1.1rem, 2.2vw, 5rem);
+  text-align: center;
+}
+body .container .textWrapper p {
+  font-size: clamp(1.1rem, 1.3vw, 5rem);
+  text-align: center;
+}
+body .container form {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+body .container form [class^=nptwrap] {
+  display: flex;
+  flex-flow: column;
+  width: 35%;
+}
+body .container form [class^=nptwrap] label {
+  font-size: clamp(1.1rem, 1.3vw, 5rem);
+  color: #F9F9F9;
+}
+body .container form [class^=nptwrap] input {
+  height: 2rem;
+  border: 2px solid white;
+  background-color: rgba(246, 246, 246, 0.1411764706);
+}
+body .container form .nptwrap1 {
+  margin-left: 2%;
+}
+body .container form button {
+  height: 2rem;
+  background-color: white;
+  color: black;
+  border: 0;
+  width: 15%;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  body .container form [class^=nptwrap] {
+    width: 100%;
+  }
+  body .container form button {
+    color: #2823FD;
+    width: 100%;
+  }
+}/*# sourceMappingURL=style.css.map */

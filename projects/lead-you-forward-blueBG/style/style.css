@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  direction: rtl;
+  font-family: "Assistant", sans-serif;
+}
+
+.text-wrapper {
+  background-image: url(../assets/Path.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  height: 300px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0 5vw;
+}
+.text-wrapper h1 {
+  color: #D3E10E;
+  font-size: clamp(2rem, 6vw, 10rem);
+}
+.text-wrapper p {
+  color: white;
+  font-size: clamp(1rem, 1.5vw, 5rem);
+}
+
+.form-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  width: 80vw;
+}
+.form-wrapper form [class^=nptwrapper], .form-wrapper form button {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+.form-wrapper form [class^=nptwrapper] label, .form-wrapper form button label {
+  color: #011560;
+  font-size: clamp(1rem, 1.4vw, 5rem);
+  font-weight: bold;
+}
+.form-wrapper form [class^=nptwrapper] input, .form-wrapper form button input {
+  height: 2.5rem;
+  border: 0;
+  border-bottom: 2px solid #D3E10E;
+  background-color: #E5EEFF;
+}
+.form-wrapper form button {
+  height: 2.5rem;
+  border: 0;
+  background-color: #D3E10E;
+  font-size: clamp(1.1rem, 1.6vw, 10rem);
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  body img {
+    height: 60vh;
+  }
+  .text-wrapper {
+    height: 70vh;
+  }
+  .form-wrapper form {
+    width: 100vw;
+    align-items: end;
+  }
+  .form-wrapper form [class^=nptwrapper], .form-wrapper form button {
+    width: 25%;
+  }
+  .form-wrapper form [class^=nptwrapper] input, .form-wrapper form button input {
+    background-color: #F6F6F6;
+  }
+  .form-wrapper form button {
+    width: 15%;
+  }
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,93 @@
+footer {
+    display: flex;
+    flex-flow: column;
+
+    .links {
+        display: flex;
+        flex-flow: row;
+        // justify-content: space-between;
+        background: $background-color;
+        padding: 2em;
+        gap: 3rem;
+        color: $complimantry-color;
+
+        .logo {
+            width: 25%;
+
+            img {
+                width: 100px;
+                padding: 0.5rem;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-flow: row;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 0;
+            padding-left: 0;
+        }
+
+        a {
+            scale: 1.5;
+            color: $complimantry-color;
+            transition: 0.3s ease-in-out;
+
+            &:hover {
+                scale: 1.6;
+                translate: 0 -5px;
+            }
+        }
+
+        .contactInfo {
+            width: 50%;
+            justify-content: center;
+
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            p {
+                border-bottom: 2px solid $complimantry-color;
+            }
+        }
+
+        .social {
+            width: 25%;
+            justify-content: center;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+
+            p {
+                border-bottom: 2px solid $complimantry-color;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .logo {
+                display: none;
+            }
+
+            .contactInfo {
+                width: 50%;
+            }
+
+            .social {
+                width: 50%;
+            }
+        }
+    }
+
+    .rights {
+        background: $complimantry-color;
+        text-align: center;
+        padding: 1em;
+        color: $misty-light;
+        font-size: 1rem;
+    }
+
+
+}

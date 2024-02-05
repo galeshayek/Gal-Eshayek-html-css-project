@@ -1,0 +1,25 @@
+footer {
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: center;
+    gap: 1em;
+    margin: 2em 0;
+
+    .social {
+        background-color: $complimantry-color;
+        width: 2.5em;
+        height: 2.5em;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    @media (min-width: $desktop) {
+        .social {
+            width: 4vw;
+            height: 4vw;
+        }
+    }
+}

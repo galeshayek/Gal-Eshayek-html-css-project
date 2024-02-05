@@ -1,0 +1,400 @@
+main {
+    // width: 80vw;
+    // margin: 0 auto;
+
+    section.hero {
+        display: grid;
+        margin-top: $section-divider;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 2em;
+        color: $primary-color;
+        // background-image: url(../assets/bgplain.jpg);
+        // background-repeat: no-repeat;
+        // background-position: top;
+        // background-size: cover;
+
+        .hero-image {
+            width: 25vw;
+            box-shadow: -2em -2em 0px 0px $complimantry-color;
+            border-radius: 15% 15% 0 15%;
+        }
+
+        .text-box {
+            display: flex;
+            flex-flow: column;
+            grid-column: 2/4;
+            grid-row: 1/2;
+            justify-content: center;
+
+            h1 {
+                color: $complimantry-color;
+            }
+
+            h2 {
+                font-size: $h3;
+                color: $complimantry-color;
+                margin-bottom: 2vw;
+            }
+
+            .btnBox {
+                @include btnEffect;
+            }
+        }
+
+        .iconsContainer {
+            grid-row: 2/3;
+            grid-column: 1/4;
+            height: 200px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 1rem;
+
+            picture {
+                img {
+                    width: clamp(70px, 7vw, 200px);
+                    height: auto;
+                    transition: 0.5s ease-in-out;
+
+                    &:hover {
+                        scale: 1.2;
+                        translate: 0 -10px;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, auto);
+            text-align: center;
+
+
+            img {
+                grid-column: 1/2;
+                grid-row: 1/2;
+                margin: 0 auto;
+            }
+
+            .text-box {
+                grid-column: 1/2;
+                grid-row: 2/3;
+            }
+
+            .btnBox {
+                align-self: center;
+            }
+
+            .iconsContainer {
+                grid-row: 3/4;
+                grid-column: 1/2;
+                scale: 0.8;
+            }
+        }
+    }
+
+    section.aboutMe {
+        position: relative;
+        margin-top: $section-divider;
+        display: grid;
+        grid-template-rows: repeat(2, auto);
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+
+        #aboutAncor {
+            position: absolute;
+            top: -150px;
+        }
+
+        img {
+            width: 25vw;
+            min-width: 200px;
+            grid-column: 2/3;
+            grid-row: 1/-1;
+            align-self: end;
+            box-shadow: 2em -2em 0px 0px $complimantry-color;
+            border-radius: 0 15% 0 0;
+        }
+
+        .headingBox {
+            grid-column: 1/2;
+            grid-row: 1/2;
+
+            h2 {
+                margin-right: 40px;
+                line-height: 2.5;
+                color: $complimantry-color;
+                border-bottom: 2px solid $complimantry-color;
+            }
+
+            .btnBox {
+                @include btnEffect;
+                margin-top: 3rem;
+            }
+        }
+
+
+
+        p {
+            grid-column: 1/2;
+            grid-row: 2/3;
+
+            .cv-highlight {
+                color: $complimantry-color;
+            }
+        }
+
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+
+            img,
+            .headingBox,
+            p {
+                grid-column: 1/2;
+                justify-self: center;
+            }
+
+            p {
+                grid-row: 2/3;
+            }
+
+            img {
+                // grid-row: 3/4;
+                // width: 30px;
+                display: none;
+            }
+
+
+            .headingBox {
+                h2 {
+                    margin-left: 0;
+                    text-align: center;
+                    grid-row: 1/2;
+                    margin: 0 auto;
+                }
+            }
+        }
+    }
+
+    section.gallery {
+        position: relative;
+        margin-top: $section-divider;
+
+        #galleryAncor {
+            position: absolute;
+            top: -150px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2.5em;
+            color: $complimantry-color;
+            border-bottom: 2px solid $complimantry-color;
+            line-height: 2.5;
+        }
+
+        p {
+            font-size: $card;
+        }
+
+        .galleryContainer {
+            display: grid;
+            margin: 0 auto;
+            grid-template:
+                "p1 p2 p2 p3"
+                "p4 p4 p5 p6"
+                "p7 p7 p8 p8";
+            gap: 1em;
+
+            [class^="project"] {
+                position: relative;
+
+                a {
+                    background-color: $background-color;
+                    color: $misty-dark;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover {
+                        scale: 1.1;
+                    }
+                }
+            }
+
+            .project1 {
+                grid-area: p1;
+            }
+
+            .project2 {
+                grid-area: p2;
+            }
+
+            .project3 {
+                grid-area: p3;
+            }
+
+            .project4 {
+                grid-area: p4;
+            }
+
+            .project5 {
+                grid-area: p5;
+            }
+
+            .project6 {
+                grid-area: p6;
+            }
+
+            .project7 {
+                grid-area: p7;
+            }
+
+            .project8 {
+                grid-area: p8;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .galleryContainer {
+                grid-template:
+                    "p1 p1 p1 p1"
+                    "p2 p2 p2 p2"
+                    "p3 p3 p3 p3"
+                    "p4 p4 p4 p4"
+                    "p5 p5 p5 p5"
+                    "p6 p6 p6 p6"
+                    "p7 p7 p7 p7"
+                    "p8 p8 p8 p8"
+
+                ;
+                gap: 1em;
+            }
+        }
+
+
+    }
+
+    section.contact {
+        position: relative;
+        margin: $section-divider 0;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-items: center;
+        gap: 2em;
+
+        #contactAncor {
+            position: absolute;
+            top: -150px;
+        }
+
+
+        .textBox {
+            grid-column: 1/2;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+
+            :nth-child(3) {
+                margin-top: 0.2rem;
+            }
+
+            h3 {
+                color: $complimantry-color;
+                border-bottom: 2px solid $complimantry-color;
+                line-height: 2.5;
+                text-align: center;
+            }
+
+            p {
+                text-align: center;
+            }
+        }
+
+        form {
+            width: 70%;
+            grid-column: 2/3;
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 1rem;
+
+            #floatingTextarea {
+                height: 100px;
+            }
+
+            .btnBox {
+                @include btnEffect;
+                align-self: center;
+
+
+            }
+
+            [name="submit"] {
+                cursor: pointer;
+                color: $complimantry-color;
+            }
+
+        }
+
+        .imgBox {
+            width: 100%;
+
+            img {
+                grid-column: 3/4;
+                align-self: center;
+            }
+        }
+
+        .btn-img-container {
+            display: flex;
+            justify-content: center;
+
+            img {
+                display: none;
+            }
+        }
+
+        @media (max-width: 576px) {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+            justify-items: center;
+            text-align: center;
+            gap: 2em;
+
+
+            .textBox,
+            form,
+            .imgBox {
+                grid-column: 1/2;
+            }
+
+            .textBox {
+                grid-row: 1/2;
+            }
+
+            form {
+                grid-row: 2/3;
+                width: 90%;
+            }
+
+            .imgBox {
+                // grid-row: 3/4;
+                // width: 20vw;
+                display: none;
+            }
+
+            .btn-img-container {
+                display: flex;
+                align-items: center;
+
+                img {
+                    display: block;
+                    width: auto;
+                    height: 15vw;
+                }
+            }
+        }
+    }
+}
