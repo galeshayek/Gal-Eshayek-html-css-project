@@ -44,7 +44,7 @@ header {
     width: 80vw;
   }
   header p {
-    font-size: clamp(0.6rem, 4vw, 8rem);
+    font-size: clamp(0.6rem, 4vw, 1.5rem);
   }
 }
 
@@ -54,6 +54,7 @@ main {
 }
 main .grid-box {
   margin-top: 5rem;
+  margin-bottom: 2rem;
   display: grid;
   justify-content: center;
   grid-template-areas: ". team ." "supervisor team calculator" "supervisor karma calculator" ". karma .";
@@ -105,7 +106,7 @@ main .grid-box div[class^=card] img {
     font-size: clamp(1rem, 6vw, 6rem);
   }
   main .grid-box div[class^=card] p {
-    font-size: clamp(0.6rem, 4vw, 8rem);
+    font-size: clamp(0.6rem, 4vw, 7rem);
   }
   main .grid-box div[class^=card] img {
     width: clamp(3rem, 15vw, 10rem);

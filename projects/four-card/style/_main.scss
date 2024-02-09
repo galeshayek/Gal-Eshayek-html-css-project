@@ -6,7 +6,7 @@ header {
 
     @media (max-width: 1050px) {
         p {
-            font-size: clamp(0.6rem, 4vw, 8rem);
+            font-size: clamp(0.6rem, 4vw, 1.5rem);
         }
 
         width: 80vw;
@@ -19,6 +19,7 @@ main {
 
     .grid-box {
         margin-top: 5rem;
+        margin-bottom: 2rem;
         display: grid;
         justify-content: center;
         grid-template-areas:
@@ -88,7 +89,7 @@ main {
                 }
 
                 p {
-                    font-size: clamp(0.6rem, 4vw, 8rem);
+                    font-size: clamp(0.6rem, 4vw, 7rem);
                 }
 
                 img {
