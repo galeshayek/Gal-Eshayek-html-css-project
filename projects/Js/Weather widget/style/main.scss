@@ -33,7 +33,7 @@ body {
             border: none;
             background: none;
             cursor: pointer;
-            font-size: clamp(1rem, 3vw, 5rem);
+            font-size: clamp(2rem, 3vw, 5rem);
         }
     }
 
@@ -42,7 +42,7 @@ body {
 
 
         #weather-icon {
-            font-size: 3rem;
+            font-size: clamp(3rem, 3.5vw, 7rem);
             margin-bottom: 10px;
         }
 
