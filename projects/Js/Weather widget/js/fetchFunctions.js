@@ -1,5 +1,7 @@
 const temp = document.querySelector('.temperature');
 const location = document.querySelector('.location');
+const humidity = document.querySelector('#humidity');
+const wind = document.querySelector('#wind');
 const date = new Date;
 const utcHour = date.getUTCHours();
 export function updateWeatherIcon(weatherDescription, utcDifference) {
@@ -30,9 +32,11 @@ export function fetchWeather(url) {
         .then(data => {
             console.log(data);
             const weatherDescription = data.weather[0].main;
+            updateWeatherIcon(weatherDescription, data.timezone);
             temp.textContent = Math.round(data.main.temp) + '°C';
             location.textContent = data.name;
-            updateWeatherIcon(weatherDescription, data.timezone);
+            humidity.textContent = `${data.main.humidity}% Humidity`;
+            wind.textContent = `${data.wind.speed} km/h speed`
         })
         .catch(error => console.log(error));
 }
