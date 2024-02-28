@@ -1,10 +1,8 @@
+import * as utils from './fetchFunctions.js';
 const searchBox = document.getElementById("searchBox");
 const apiKey = '580e6e590b5905cefa8e2393dc148dd9';
 const unitType = 'metric';
 let lang = 'en';
-
-import * as utils from './utils.js';
-
 
 //get current location function
 navigator.geolocation.getCurrentPosition((position) => {
