@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather widget</title>
+    <script type="module" src="./js/weather.js"></script>
+    <link rel="stylesheet" href="./style/main.css">
+</head>
+
+<body>
+    <div class="weather-widget">
+        <div class="search-box">
+            <input type="text" placeholder="enter city name" id="searchBox">
+            <button id="search">🔍</button>
+        </div>
+        <div class="weather-info">
+            <span id="weather-icon">
+            </span>
+            <div class="temperature">∞</div>
+            <div class="location">loading...</div>
+        </div>
+        <div class="additional-info">
+            <p id="humidity">
+                50% Humidity
+            </p>
+            <p id="wind">
+                15 km/h Wind Speed
+            </p>
+        </div>
+    </div>
+</body>
+</body>
+
+</html>
