@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper {
+    background: beige;
+    width: 30vw;
+    aspect-ratio: 4/3;
+
+    header {
+        background: whitesmoke;
+        text-align: center;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    main {
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+
+        [class^="clock"] {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+
+            img {
+                width: 4vw;
+                margin: 0 auto;
+            }
+        }
+    }
+}
