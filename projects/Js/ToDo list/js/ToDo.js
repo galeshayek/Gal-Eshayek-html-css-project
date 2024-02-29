@@ -61,11 +61,10 @@ function removeToDo(e) {
     if (e.target && e.target.matches('.btn-warning')) {
         const id = e.target.getAttribute('data-todo-id');
         const index = ToDos.findIndex(todo => todo.id === id);
-        if (index !== -1) {
-            ToDos.splice(index, 1);
-        }
+        ToDos.splice(index, 1);
+
         const todo = document.getElementById(id);
-        if (todo) list.removeChild(todo);
+        list.removeChild(todo);
         localStorage.setItem('ToDo list', JSON.stringify(ToDos));
     }
 }
@@ -79,6 +78,8 @@ function toggleTodoDone(e) {
             todo.isDone = e.target.checked;
             // Update localStorage with the new state
             localStorage.setItem('ToDo list', JSON.stringify(ToDos));
+            window.location.reload();
+
         }
     }
 }
@@ -94,3 +95,10 @@ clearBtn.addEventListener('click', () => {
     window.location.reload();
 });
 
+ToDos.forEach(e => {
+    if (e.isDone == true) {
+        const id = e.id
+        const todo = document.getElementById(id)
+        todo.setAttribute('class', 'todo-list-item completed')
+    }
+});
