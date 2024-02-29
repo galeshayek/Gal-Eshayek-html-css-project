@@ -1,47 +1,89 @@
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid@5.0.6/+esm';
 const userInput = document.getElementById("userInput");
-const btn = document.getElementById("button")
-const list = document.getElementById("list")
-const ToDos = []
-let id = ToDos.length + 1
-const savedList = JSON.parse(localStorage.getItem('ToDo list'))
+const btn = document.getElementById("button");
+const list = document.getElementById("list");
+const clearBtn = document.getElementById('clear-button');
+const ToDos = [];
+const savedList = JSON.parse(localStorage.getItem('ToDo list'));
+// update and render existing list on refresh
 if (savedList) {
-    localStorage.setItem('ToDo list', JSON.stringify(savedList))
-    savedList.forEach(item => {
-        item.id = id++
-        ToDos.push(item)
-        const newTask = document.createElement('li');
-        newTask.textContent = item.description;
-        newTask.id = `toDo${item.id}`;
-        list.appendChild(newTask);
+    ToDos.push(...savedList);
+    let index = -1
+    ToDos.forEach(item => {
+        index++
+        render(ToDos, index);
     });
 }
+
 function addToList() {
-    let todo = userInput.value
-    userInput.value = ""
+    let todo = userInput.value;
+    userInput.value = "";
     const item = {
-        id: id++,
+        id: nanoid(),
         description: todo,
         isDone: false
     }
     ToDos.push(item);
-    console.log(ToDos)
+    console.log(ToDos);
+    localStorage.setItem('ToDo list', JSON.stringify(ToDos));
+    //render only the last todo from the list
+    render(ToDos, (ToDos.length - 1));
+}
+//render one item from array.
+function render(array, itemIndex) {
+    const item = array[itemIndex]
     const newTask = document.createElement('li');
-    newTask.id = `toDo${item.id}`;
+    newTask.textContent = item.description;
+    newTask.id = item.id;
+    const checkbox = document.createElement('input');
+    checkbox.setAttribute('type', 'checkbox');
+    checkbox.setAttribute('class', 'me-2 checkbox');
+    checkbox.setAttribute('data-todo-id', item.id);
+    checkbox.checked = item.isDone;
+    const removeTask = document.createElement('button');
+    removeTask.setAttribute('class', 'btn btn-warning');
+    removeTask.setAttribute('data-todo-id', item.id);
+    removeTask.textContent = 'Remove';
+    newTask.id = item.id;
+    newTask.setAttribute('class', 'todo-list-item')
     newTask.textContent = item.description;
     list.appendChild(newTask);
-    localStorage.setItem('ToDo list', JSON.stringify(ToDos));
+    newTask.prepend(checkbox);
+    newTask.appendChild(removeTask);
+
 }
 
 btn.addEventListener('click', addToList)
 
-function removeToDo(x) {
-    const idToRemove = x
-    const updateList = savedList.filter(todo => todo.id !== idToRemove)
-    localStorage.setItem('ToDo list', JSON.stringify(updateList))
-    child = document.getElementById(`toDo${x}`);
-    list.removeChild(child)
-
+function removeToDo(e) {
+    if (e.target && e.target.matches('.btn-warning')) {
+        const id = e.target.getAttribute('data-todo-id');
+        const todo = document.getElementById(id);
+        list.removeChild(todo);
+    }
 }
+list.addEventListener('click', removeToDo)
+
+function toggleTodoDone(e) {
+    if (e.target && e.target.matches('.checkbox')) {
+        const todoId = e.target.getAttribute('data-todo-id');
+        const todo = ToDos.find(todo => todo.id === todoId);
+        if (todo) {
+            todo.isDone = e.target.checked;
+            // Update localStorage with the new state
+            localStorage.setItem('ToDo list', JSON.stringify(ToDos));
+        }
+    }
+}
+list.addEventListener('click', toggleTodoDone);
+
+
 console.log(savedList);
-// localStorage.clear()
+console.log(ToDos)
+
+//Delete and Refresh list
+clearBtn.addEventListener('click', () => {
+    localStorage.clear('ToDo list')
+    window.location.reload();
+});
 
