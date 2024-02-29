@@ -1,3 +1,5 @@
+//fix when checked moves to done
+
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid@5.0.6/+esm';
 const userInput = document.getElementById("userInput");
 const btn = document.getElementById("button");
@@ -58,8 +60,13 @@ btn.addEventListener('click', addToList)
 function removeToDo(e) {
     if (e.target && e.target.matches('.btn-warning')) {
         const id = e.target.getAttribute('data-todo-id');
+        const index = ToDos.findIndex(todo => todo.id === id);
+        if (index !== -1) {
+            ToDos.splice(index, 1);
+        }
         const todo = document.getElementById(id);
-        list.removeChild(todo);
+        if (todo) list.removeChild(todo);
+        localStorage.setItem('ToDo list', JSON.stringify(ToDos));
     }
 }
 list.addEventListener('click', removeToDo)
