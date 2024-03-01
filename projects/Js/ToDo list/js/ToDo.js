@@ -1,7 +1,7 @@
 
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid@5.0.6/+esm';
 const userInput = document.getElementById("userInput");
-const btn = document.getElementById("button");
+const searchButton = document.getElementById("search");
 const listTodo = document.getElementById("list-todo");
 const listIsDone = document.getElementById("list-isDone")
 const clearBtn = document.getElementById('clear-button');
@@ -60,16 +60,7 @@ function render(array, itemIndex) {
     newTask.prepend(checkbox);
 
 }
-
-const enterToSearch = document.getElementById('searchBox').addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        document.getElementById("search").click();
-    }
-})
-
-btn.addEventListener('click', addToList)
-
-
+//style and move item from lists when cheking the checkbox
 function toggleTodoDone(e) {
     if (e.target && e.target.matches('.checkbox')) {
         //gets the checkbox id
@@ -81,40 +72,35 @@ function toggleTodoDone(e) {
         //update todo class
         // Update localStorage with the new state
         localStorage.setItem('ToDo list', JSON.stringify(ToDos));
-        //reloads the page to update style
-        // window.location.reload();
-        ToDos.forEach(item => {
-            if (item.isDone == true) {
-                // Apply styles and class for completed todo items
-                const id = item.id
-                const todo = document.getElementById(id)
-                todo.style.textDecoration = 'line-through';
-                todo.style.color = '#6c757d';
-                todo.setAttribute('class', 'todo-list-item completed');
-                // Move the completed todo item to the designated completed list
-                listTodo.removeChild(todo);
-                listIsDone.appendChild(todo);
-                const removeTask = document.createElement('button');
-                removeTask.setAttribute('class', 'btn btn-warning');
-                removeTask.setAttribute('data-button-id', item.id);
-                removeTask.textContent = 'Remove';
-                todo.appendChild(removeTask);
-            } else {
-                const id = item.id
-                const todo = document.getElementById(id)
-                todo.style.textDecoration = 'none';
-                todo.style.color = 'black';
-                todo.setAttribute('class', 'todo-list-item');
-                listIsDone.removeChild(todo);
-                listTodo.appendChild(todo);
-                const removeTask = document.querySelector(`[data-button-id="${id}"]`);
-                todo.removeChild(removeTask);
-            }
-        });
+        //apply style
+        if (todo.isDone == true) {
+            const id = todo.id
+            const todoDom = document.getElementById(id)
+            // Apply styles and class for completed todo items
+            todoDom.style.textDecoration = 'line-through';
+            todoDom.style.color = '#6c757d';
+            todoDom.setAttribute('class', 'todo-list-item completed');
+            // Move the completed todo item to the designated completed list
+            listTodo.removeChild(todoDom);
+            listIsDone.appendChild(todoDom);
+            const removeTask = document.createElement('button');
+            removeTask.setAttribute('class', 'btn btn-warning');
+            removeTask.setAttribute('data-button-id', id);
+            removeTask.textContent = 'Remove';
+            todoDom.appendChild(removeTask);
+        } else {
+            const id = todo.id
+            const todoDom = document.getElementById(id)
+            todoDom.style.textDecoration = 'none';
+            todoDom.style.color = 'black';
+            todoDom.setAttribute('class', 'todo-list-item');
+            listIsDone.removeChild(todoDom);
+            listTodo.appendChild(todoDom);
+            const removeTask = document.querySelector(`[data-button-id="${id}"]`);
+            todoDom.removeChild(removeTask);
+        }
     }
 }
-listTodo.addEventListener('click', toggleTodoDone);
-listIsDone.addEventListener('click', toggleTodoDone);
 
 function removeToDo(e) {
     if (e.target && e.target.matches('.btn-warning')) {
@@ -128,15 +114,18 @@ function removeToDo(e) {
         localStorage.setItem('ToDo list', JSON.stringify(ToDos));
     }
 }
+//eventListeners
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        searchButton.click();
+    }
+})
+searchButton.addEventListener('click', addToList);
+listTodo.addEventListener('click', toggleTodoDone);
+listIsDone.addEventListener('click', toggleTodoDone);
 listIsDone.addEventListener('click', removeToDo);
-
-
-
-console.log(ToDos)
-
 //Delete and Refresh list
 clearBtn.addEventListener('click', () => {
     localStorage.clear('ToDo list')
     window.location.reload();
 });
-
