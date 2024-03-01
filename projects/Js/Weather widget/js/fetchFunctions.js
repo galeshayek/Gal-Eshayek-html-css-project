@@ -41,6 +41,3 @@ export function fetchWeather(url) {
         .catch(error => console.log(error));
 }
 
-export = function changeLang(lang) {
-    if
-}

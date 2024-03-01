@@ -61,6 +61,11 @@ function render(array, itemIndex) {
 
 }
 
+const enterToSearch = document.getElementById('searchBox').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+        document.getElementById("search").click();
+    }
+})
 
 btn.addEventListener('click', addToList)
 
