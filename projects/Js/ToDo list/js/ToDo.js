@@ -61,6 +61,7 @@ function render(array, itemIndex) {
 
 }
 
+
 btn.addEventListener('click', addToList)
 
 

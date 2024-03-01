@@ -3,6 +3,7 @@ const searchBox = document.getElementById("searchBox");
 const apiKey = '580e6e590b5905cefa8e2393dc148dd9';
 const unitType = 'metric';
 const selectLang = document.getElementById('select-lang');
+const search = document.getElementById("search")
 // let lang = 'en';
 //get current location function
 navigator.geolocation.getCurrentPosition((position) => {
@@ -14,7 +15,7 @@ navigator.geolocation.getCurrentPosition((position) => {
 })
 
 //display values for seach
-document.getElementById("search").addEventListener('click', () => {
+search.addEventListener('click', () => {
     const citynName = searchBox.value;
     let lang = selectLang.value
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${citynName}&appid=${apiKey}&units=${unitType}&lang=${lang}`;
