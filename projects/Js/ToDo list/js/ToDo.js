@@ -1,19 +1,19 @@
-//fix when checked moves to done
 
 import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid@5.0.6/+esm';
 const userInput = document.getElementById("userInput");
 const btn = document.getElementById("button");
-const list = document.getElementById("list");
+const listTodo = document.getElementById("list-todo");
+const listIsDone = document.getElementById("list-isDone")
 const clearBtn = document.getElementById('clear-button');
 const ToDos = [];
 const savedList = JSON.parse(localStorage.getItem('ToDo list'));
 // update and render existing list on refresh
 if (savedList) {
     ToDos.push(...savedList);
-    let index = -1
+    let index = 0
     ToDos.forEach(item => {
-        index++
         render(ToDos, index);
+        index++
     });
 }
 
@@ -42,51 +42,90 @@ function render(array, itemIndex) {
     checkbox.setAttribute('class', 'me-2 checkbox');
     checkbox.setAttribute('data-todo-id', item.id);
     checkbox.checked = item.isDone;
-    const removeTask = document.createElement('button');
-    removeTask.setAttribute('class', 'btn btn-warning');
-    removeTask.setAttribute('data-todo-id', item.id);
-    removeTask.textContent = 'Remove';
     newTask.id = item.id;
     newTask.setAttribute('class', 'todo-list-item')
     newTask.textContent = item.description;
-    list.appendChild(newTask);
+    if (item.isDone === true) {
+        newTask.setAttribute('class', ' todo-list-item completed')
+        listIsDone.appendChild(newTask);
+        newTask.prepend(checkbox);
+        const removeTask = document.createElement('button');
+        removeTask.setAttribute('class', 'btn btn-warning');
+        removeTask.setAttribute('data-button-id', item.id);
+        removeTask.textContent = 'Remove';
+        newTask.appendChild(removeTask);
+        return
+    }
+    listTodo.appendChild(newTask);
     newTask.prepend(checkbox);
-    newTask.appendChild(removeTask);
 
 }
 
 btn.addEventListener('click', addToList)
 
+
+function toggleTodoDone(e) {
+    if (e.target && e.target.matches('.checkbox')) {
+        //gets the checkbox id
+        const todoId = e.target.getAttribute('data-todo-id');
+        //finds the todo that matches the checkbox id
+        const todo = ToDos.find(todo => todo.id === todoId);
+        //changes todo isDone to false or true
+        todo.isDone = e.target.checked;
+        //update todo class
+        // Update localStorage with the new state
+        localStorage.setItem('ToDo list', JSON.stringify(ToDos));
+        //reloads the page to update style
+        // window.location.reload();
+        ToDos.forEach(item => {
+            if (item.isDone == true) {
+                // Apply styles and class for completed todo items
+                const id = item.id
+                const todo = document.getElementById(id)
+                todo.style.textDecoration = 'line-through';
+                todo.style.color = '#6c757d';
+                todo.setAttribute('class', 'todo-list-item completed');
+                // Move the completed todo item to the designated completed list
+                listTodo.removeChild(todo);
+                listIsDone.appendChild(todo);
+                const removeTask = document.createElement('button');
+                removeTask.setAttribute('class', 'btn btn-warning');
+                removeTask.setAttribute('data-button-id', item.id);
+                removeTask.textContent = 'Remove';
+                todo.appendChild(removeTask);
+            } else {
+                const id = item.id
+                const todo = document.getElementById(id)
+                todo.style.textDecoration = 'none';
+                todo.style.color = 'black';
+                todo.setAttribute('class', 'todo-list-item');
+                listIsDone.removeChild(todo);
+                listTodo.appendChild(todo);
+                const removeTask = document.querySelector(`[data-button-id="${id}"]`);
+                todo.removeChild(removeTask);
+            }
+        });
+    }
+}
+listTodo.addEventListener('click', toggleTodoDone);
+listIsDone.addEventListener('click', toggleTodoDone);
+
 function removeToDo(e) {
     if (e.target && e.target.matches('.btn-warning')) {
-        const id = e.target.getAttribute('data-todo-id');
+        const id = e.target.getAttribute('data-button-id');
         const index = ToDos.findIndex(todo => todo.id === id);
         ToDos.splice(index, 1);
 
         const todo = document.getElementById(id);
-        list.removeChild(todo);
+        console.log(todo);
+        listIsDone.removeChild(todo);
         localStorage.setItem('ToDo list', JSON.stringify(ToDos));
     }
 }
-list.addEventListener('click', removeToDo)
-
-function toggleTodoDone(e) {
-    if (e.target && e.target.matches('.checkbox')) {
-        const todoId = e.target.getAttribute('data-todo-id');
-        const todo = ToDos.find(todo => todo.id === todoId);
-        if (todo) {
-            todo.isDone = e.target.checked;
-            // Update localStorage with the new state
-            localStorage.setItem('ToDo list', JSON.stringify(ToDos));
-            window.location.reload();
-
-        }
-    }
-}
-list.addEventListener('click', toggleTodoDone);
+listIsDone.addEventListener('click', removeToDo);
 
 
-console.log(savedList);
+
 console.log(ToDos)
 
 //Delete and Refresh list
@@ -95,10 +134,3 @@ clearBtn.addEventListener('click', () => {
     window.location.reload();
 });
 
-ToDos.forEach(e => {
-    if (e.isDone == true) {
-        const id = e.id
-        const todo = document.getElementById(id)
-        todo.setAttribute('class', 'todo-list-item completed')
-    }
-});
