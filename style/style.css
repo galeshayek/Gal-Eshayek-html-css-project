@@ -435,6 +435,13 @@ main section.gallery h2 {
   border-bottom: 2px solid #385E72;
   line-height: 2.5;
 }
+main section.gallery h3 {
+  text-align: center;
+  margin-bottom: 2.5em;
+  color: #385E72;
+  border-bottom: 2px solid #385E72;
+  line-height: 2.5;
+}
 main section.gallery p {
   font-size: clamp(1rem, 1.4vw, 2rem);
 }

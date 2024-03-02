@@ -196,6 +196,14 @@ main {
             line-height: 2.5;
         }
 
+        h3 {
+            text-align: center;
+            margin-bottom: 2.5em;
+            color: $complimantry-color;
+            border-bottom: 2px solid $complimantry-color;
+            line-height: 2.5;
+        }
+
         p {
             font-size: $card;
         }
