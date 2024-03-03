@@ -42,6 +42,9 @@ function updateNumbers() {
 
 numRange.addEventListener('change', () => {
     updateNumbers();
+    userInput.removeAttribute("disabled")
+    button.removeAttribute("disabled")
+
 })
 
 operatorRange.addEventListener('change', () => {
