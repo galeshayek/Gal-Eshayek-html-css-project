@@ -63,7 +63,7 @@ main>section>.display {
 }
 
 .display>p {
-    direction: ltr;
+    padding-right: auto;
     font-size: clamp(1.2rem, 2.5vw, 5rem);
     width: 33.33%;
 }
@@ -73,7 +73,6 @@ main>section>.display {
 }
 
 .display button {
-    min-width: 90px;
     width: 33.33%;
 }
 
