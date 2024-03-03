@@ -18,7 +18,7 @@ body p {
 }
 
 .wrapper {
-  background: beige;
+  background: rgb(220, 245, 221);
   width: clamp(300px, 40vw, 1500px);
   aspect-ratio: 4/3;
 }
