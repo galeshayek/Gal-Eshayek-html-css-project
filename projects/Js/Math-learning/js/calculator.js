@@ -3,15 +3,16 @@ const numRange = document.getElementById("numRange");
 const operatorRange = document.getElementById("operatorRange");
 const userInput = document.getElementById("userInput");
 const targil = document.getElementById("targil");
-let firstNum = document.getElementById("num1");
-let operator = document.getElementById("operator");
-let secondNum = document.getElementById("num2");
+const firstNum = document.getElementById("num1");
+const operator = document.getElementById("operator");
+const secondNum = document.getElementById("num2");
 const equal = document.getElementById("equal");
 const table = document.getElementById("list");
 let pointsCalc = 0
 let pointsSum = 0;
 
 function updateNumbers() {
+    targil.style.display = 'block'
     let value = numRange.value;
     let num1 = 0;
     let num2 = 0;
