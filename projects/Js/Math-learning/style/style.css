@@ -63,16 +63,18 @@ main>section>.display {
 }
 
 .display>p {
+    direction: ltr;
     font-size: clamp(1.2rem, 2.5vw, 5rem);
+    width: 33.33%;
 }
 
 .display input {
-    width: 15vw;
+    width: 33.33%;
 }
 
 .display button {
     min-width: 90px;
-    width: 10vw;
+    width: 33.33%;
 }
 
 /* .display button {
