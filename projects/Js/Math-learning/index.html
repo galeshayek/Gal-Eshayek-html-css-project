@@ -20,42 +20,42 @@
         <header>
             <p>משחק ללימודי חשבון</p>
         </header>
-        <section>
-            <div class="options">
-                <p>אפשרויות משחק</p>
-                <select name="operator" id="operatorRange" class="form-select">
-                    <option value="">בחר פעולה מתמטית</option>
+        <div class="options">
+            <p>אפשרויות משחק</p>
+            <select name="operator" id="operatorRange" class="form-select">
+                <option value="">בחר פעולה מתמטית</option>
 
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
-                </select>
-                <select name="numRange" id="numRange" class="form-select" aria-label="Disabled select example" disabled>
-                    <option value="">בחר טווח מספרים</option>
-                    <option value="1-10">1-10</option>
-                    <option value="1-100">1-100</option>
-                    <option value="1-1000">1-1000</option>
-                </select>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <select name="numRange" id="numRange" class="form-select" aria-label="Disabled select example" disabled>
+                <option value="">בחר טווח מספרים</option>
+                <option value="1-10">1-10</option>
+                <option value="1-100">1-100</option>
+                <option value="1-1000">1-1000</option>
+            </select>
+        </div>
+        <div class="display">
+            <p id="targil">
+                <span id="num1"></span>
+                <span id="operator"></span>
+                <span id="num2"></span>
+                <span id="equal"></span>
+            </p>
+            <input type="text" size="10" id="userInput" class="form-control">
+            <button id="checkAnswer" class="btn btn-primary ">בדוק</button>
+        </div>
+        <div class="list" id="list">
+            <div id="title">
+                <h3>תרגיל</h3>
+                <h3>תשובה נכונה</h3>
+                <h3>תשובה שענית</h3>
+                <h3>נקודות</h3>
             </div>
-            <div class="display">
-                <p id="targil">
-                    <span id="num1"></span>
-                    <span id="operator"></span>
-                    <span id="num2"></span>
-                </p>
-                <input type="text" id="userInput" class="form-control">
-                <button id="checkAnswer" class="btn btn-primary ">בדוק</button>
-            </div>
-            <div class="list" id="list">
-                <div id="title">
-                    <h3>תרגיל</h3>
-                    <h3>תשובה נכונה</h3>
-                    <h3>תשובה שענית</h3>
-                    <h3>נקודות</h3>
-                </div>
-            </div>
-        </section>
+        </div>
+
     </main>
 </body>
 

@@ -6,6 +6,7 @@ const targil = document.getElementById("targil");
 let firstNum = document.getElementById("num1");
 let operator = document.getElementById("operator");
 let secondNum = document.getElementById("num2");
+const equal = document.getElementById("equal");
 const table = document.getElementById("list");
 let pointsCalc = 0
 let pointsSum = 0;
@@ -17,26 +18,24 @@ function updateNumbers() {
     switch (value) {
         case '1-10':
             num1 = Math.floor(Math.random() * 10) + 1;
-            num2 = Math.floor(Math.random() * (num1 - 1)) + 1; // Ensure num2 < num1
+            num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
             firstNum.innerHTML = num1;
             secondNum.innerHTML = num2;
             break;
         case '1-100':
             num1 = Math.floor(Math.random() * 100) + 1;
-            num2 = Math.floor(Math.random() * (num1 - 1)) + 1; // Ensure num2 < num1
+            num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
             firstNum.innerHTML = num1;
             secondNum.innerHTML = num2;
             break;
         case '1-1000':
             num1 = Math.floor(Math.random() * 1000) + 1;
-            num2 = Math.floor(Math.random() * (num1 - 1)) + 1; // Ensure num2 < num1
+            num2 = Math.floor(Math.random() * (num1 - 1)) + 1;
             firstNum.innerHTML = num1;
             secondNum.innerHTML = num2;
             break;
     }
-    const equal = document.createElement('span');
     equal.textContent = "=";
-    targil.appendChild(equal);
 }
 
 

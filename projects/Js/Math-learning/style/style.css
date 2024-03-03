@@ -19,7 +19,6 @@ body {
 
 main {
     background: #ffffff;
-    min-width: fit-content;
     width: 45vw;
     aspect-ratio: 5/3;
     display: flex;
@@ -37,7 +36,9 @@ main>header {
     font-size: 1.5rem;
 }
 
-main>section>.options {
+
+
+main>.options {
     display: flex;
     flex-flow: column;
     border-bottom: 2px gray solid;
@@ -54,9 +55,8 @@ main>section>.options {
     margin-bottom: 10px;
 }
 
-main>section>.display {
+main>.display {
     display: flex;
-    justify-content: center;
     align-items: end;
     gap: 1rem;
     padding: 0 0.5rem;
@@ -70,7 +70,7 @@ main>section>.display {
 }
 
 .display input {
-    width: 33.33%;
+    width: 15%;
 }
 
 .display button {
@@ -83,8 +83,7 @@ main>section>.display {
     color: white;
     border: 0;
 } */
-
-section .list {
+.list {
     margin-top: 1rem;
     display: grid;
     grid-template-areas:
@@ -93,7 +92,7 @@ section .list {
     ;
 }
 
-section .list {
+.list {
     display: flex;
     flex-flow: column-reverse;
     row-gap: 1rem;
@@ -124,12 +123,17 @@ section .list {
         background-size: 100vw 100vh;
     }
 
-    main section .options {
+    main .options {
         flex-flow: row wrap;
         align-items: center;
         gap: 1rem;
         justify-content: center;
         text-align: center;
+    }
+
+    .display {
+        flex-flow: wrap;
+        justify-content: center;
     }
 
     .options p {
