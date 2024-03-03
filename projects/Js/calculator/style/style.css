@@ -26,6 +26,7 @@ body {
   border: none;
   padding: 10px;
   margin-bottom: 20px;
+  font-size: clamp(1.5rem, 2.3vw, 5rem);
 }
 .calculator .calculator-keys {
   display: grid;
