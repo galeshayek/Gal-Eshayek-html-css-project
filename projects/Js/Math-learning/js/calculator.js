@@ -2,6 +2,7 @@ const button = document.getElementById("checkAnswer");
 const numRange = document.getElementById("numRange");
 const operatorRange = document.getElementById("operatorRange");
 const userInput = document.getElementById("userInput");
+const targil = document.getElementById("targil");
 let firstNum = document.getElementById("num1");
 let operator = document.getElementById("operator");
 let secondNum = document.getElementById("num2");
@@ -33,6 +34,9 @@ function updateNumbers() {
             secondNum.innerHTML = num2;
             break;
     }
+    const equal = document.createElement('span');
+    equal.textContent = "=";
+    targil.appendChild(equal);
 }
 
 

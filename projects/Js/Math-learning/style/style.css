@@ -63,7 +63,7 @@ main>section>.display {
 }
 
 .display>p {
-    padding-right: auto;
+    text-align: center;
     font-size: clamp(1.2rem, 2.5vw, 5rem);
     width: 33.33%;
 }
