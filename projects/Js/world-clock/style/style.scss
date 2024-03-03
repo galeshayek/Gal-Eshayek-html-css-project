@@ -9,19 +9,54 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    h1 {
+        font-size: clamp(1.5rem, 3.5vw, 6rem);
+    }
+
+    p {
+        font-size: clamp(1rem, 2.5vw, 5rem);
+    }
 }
 
 .wrapper {
     background: beige;
-    width: 30vw;
+    width: clamp(300px, 40vw, 1500px);
     aspect-ratio: 4/3;
 
-    header {
+    header,
+    footer {
         background: whitesmoke;
         text-align: center;
+    }
 
-        h1 {
-            font-size: 2rem;
+    footer {
+        padding: 8px 0;
+
+        h2 {
+            padding-bottom: 4px;
+        }
+
+        .settings {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        div {
+            input {
+                border-radius: 10px 0 0 10px;
+            }
+
+            button {
+                width: 25px;
+                border-radius: 0 10px 10px 0;
+                translate: -10px;
+            }
+
+            select {
+                width: 100px;
+            }
         }
     }
 
