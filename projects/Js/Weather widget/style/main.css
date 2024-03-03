@@ -21,6 +21,7 @@ body {
   justify-content: space-between;
 }
 .weather-widget .search-box input {
+  font-size: clamp(1rem, 1.5vw, 5rem);
   width: 70%;
   padding: 10px;
   border: none;
