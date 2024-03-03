@@ -64,6 +64,13 @@ operatorRange.addEventListener('change', () => {
 })
 
 button.addEventListener("click", () => {
+    //input validation
+    const nptValue = userInput.value;
+    console.log(+nptValue);
+    if (isNaN(+nptValue)) {
+        alert("Answer must be a number");
+        return
+    }
     // calculates the currect answer
     let currectAns = +(firstNum.textContent) + +(secondNum.textContent);
     switch (true) {
