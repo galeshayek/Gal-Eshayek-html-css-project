@@ -57,12 +57,13 @@ main>section>.options {
 main>section>.display {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: end;
     gap: 1rem;
     padding: 0 0.5rem;
 }
 
 .display>p {
+    margin-bottom: 0;
     text-align: center;
     font-size: clamp(1.2rem, 2.5vw, 5rem);
     width: 33.33%;
