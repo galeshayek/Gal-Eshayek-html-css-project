@@ -2,3 +2,10 @@
         text-decoration: line-through;
         color: #6c757d;
     }
+
+    @media (max-width: 576px) {
+        main {
+            min-height: 80vh;
+            min-height: 80dvh;
+        }
+    }

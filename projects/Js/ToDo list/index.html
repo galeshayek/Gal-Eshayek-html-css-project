@@ -17,9 +17,10 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 
-<body>
-    <main class="container-md text-center border rounded-5 shadow mt-5 p-0">
-        <h1 class="bg-body-secondary rounded-top-5 mb-0">Chores</h1>
+<body class="mx-3">
+    <main
+        class="container text-center border rounded-5 shadow mt-5 p-0 d-flex flex-column align-items-center justify-content-between">
+        <h1 class="bg-body-secondary rounded-top-5 mb-2 w-100">Chores</h1>
         <div class="todo-add input-group mb-3">
             <input type="text" class="form-control " placeholder="Add Item" aria-label="Add Item"
                 aria-describedby="button" id="userInput">
@@ -27,10 +28,10 @@
                 <button class="btn btn-outline-secondary" type="button" id="search">+</button>
             </div>
         </div>
-        <h2>TO DO</h2>
+        <h2 class="border-bottom w-50">TO DO</h2>
         <ul class="list-unstyled" id="list-todo">
         </ul>
-        <h2>COMPLETED</h2>
+        <h2 class="border-bottom w-50">COMPLETED</h2>
         <ul class="list-unstyled" id="list-isDone">
         </ul>
         <button class="btn btn-danger mb-2" id="clear-button">Clear list</button>
