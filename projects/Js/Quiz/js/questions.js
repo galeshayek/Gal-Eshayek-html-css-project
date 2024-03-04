@@ -3,7 +3,7 @@ const text = document.getElementById("text-input");
 const options = document.getElementById("options-input");
 const correctAns = document.getElementById("correct-ans-input");
 const addQuestion = document.getElementById("subnit-inputs");
-const clearStorage = document.getElementById("clear");
+
 export class Question {
     constructor(text, options, correctAnswer) {
         this.text = text;
@@ -16,26 +16,7 @@ export class Question {
     }
 }
 
-const que = new Question('somthing', ['1', '2', '3', '4'], '3');
-const que2 = new Question('somthing', ['1', '2', '3', '4'], '3');
-const ques = [que, que2]
-const ans = que.checkAnswer('3');
-console.log(ques);
-
-const questionData = [
-    // { text: 'What is 2 + 2?', options: ['2', '6', '4', '8'], correctAnswer: '4' },
-    // { text: 'What is the capital of France?', options: ['London', 'Berlin', 'Paris', 'Madrid'], correctAnswer: 'Paris' },
-    // { text: 'What is 2 + 2?', options: ['2', '6', '4', '8'], correctAnswer: '4' },
-    // { text: 'What is the capital of France?', options: ['London', 'Berlin', 'Paris', 'Madrid'], correctAnswer: 'Paris' },
-    // { text: 'Which language is primarily used for web development?', options: ['Python', 'JavaScript', 'C++', 'Java'], correctAnswer: 'JavaScript' },
-    // { text: 'What does HTML stand for?', options: ['Hyper Trainer Marking Language', 'Hyper Text Markup Language', 'Hyperlinks and Text Markup Language', 'Home Tool Markup Language'], correctAnswer: 'Hyper Text Markup Language' },
-    // { text: 'What year was JavaScript created?', options: ['1990', '1995', '2000', '2005'], correctAnswer: '1995' },
-    // { text: 'Which symbol is used for comments in JavaScript?', options: ['//', '/* */', '#', '<!-- -->'], correctAnswer: '//' },
-    // { text: 'What does CSS stand for?', options: ['Creative Style Sheets', 'Colorful Style Sheets', 'Computer Style Sheets', 'Cascading Style Sheets'], correctAnswer: 'Cascading Style Sheets' },
-    // { text: 'Which method is used to round a number to the nearest integer in JavaScript?', options: ['Math.round()', 'Math.floor()', 'Math.ceil()', 'Math.random()'], correctAnswer: 'Math.round()' },
-    // { text: 'How do you declare a JavaScript variable?', options: ['varName', 'var varName', 'variable varName', 'v varName'], correctAnswer: 'var varName' },
-    // { text: 'Which HTML tag is used to define an internal style sheet?', options: ['<script>', '<css>', '<style>', '<link>'], correctAnswer: '<style>' }
-];
+const questionData = [];
 
 const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
 if (!localStorage.getItem('questionList')) {
@@ -45,7 +26,6 @@ if (!localStorage.getItem('questionList')) {
 let listOfObjects = JSON.parse(localStorage.getItem('questionList'));
 
 export let listOfQuestions = listOfObjects.map(q => new Question(q.text, q.options, q.correctAnswer));
-console.log(listOfQuestions)
 
 
 
@@ -66,7 +46,7 @@ addQuestion.addEventListener('click', () => {
         options.value = ""
         correctAns.value = ""
 
-        //
+        //add question to local storage
         const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
         localStorage.clear('questionList');
         localStorage.setItem('questionList', JSON.stringify(tempList));
@@ -75,6 +55,3 @@ addQuestion.addEventListener('click', () => {
     }
 });
 
-clearStorage.addEventListener("click", () => {
-    localStorage.clear('questionList');
-})

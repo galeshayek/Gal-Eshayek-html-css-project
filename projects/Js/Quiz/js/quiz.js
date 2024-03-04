@@ -25,12 +25,9 @@ class Quiz {
     }
 
     static initializeQuiz() {
-        // Static method to initialize a quiz with predefined questions
         const questions = [...listOfQuestions];
         return new Quiz(questions);
     }
 }
-// Initialize the quiz with predefined questions
 export let quiz = Quiz.initializeQuiz();
 
-console.log(quiz)
