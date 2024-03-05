@@ -55,3 +55,19 @@ addQuestion.addEventListener('click', () => {
     }
 });
 
+export function demoQuestions() {
+    const demoQuestions = [
+        { text: 'What is 2 + 2?', options: ['2', '6', '4', '8'], correctAnswer: '4' },
+        { text: 'What is the capital of France?', options: ['London', 'Berlin', 'Paris', 'Madrid'], correctAnswer: 'Paris' },
+        { text: 'Which language is primarily used for web development?', options: ['Python', 'JavaScript', 'C++', 'Java'], correctAnswer: 'JavaScript' },
+        { text: 'What does HTML stand for?', options: ['Hyper Trainer Marking Language', 'Hyper Text Markup Language', 'Hyperlinks and Text Markup Language', 'Home Tool Markup Language'], correctAnswer: 'Hyper Text Markup Language' },
+        { text: 'What year was JavaScript created?', options: ['1990', '1995', '2000', '2005'], correctAnswer: '1995' },
+        { text: 'Which symbol is used for comments in JavaScript?', options: ['//', '/* */', '#', '<!-- -->'], correctAnswer: '//' },
+        { text: 'What does CSS stand for?', options: ['Creative Style Sheets', 'Colorful Style Sheets', 'Computer Style Sheets', 'Cascading Style Sheets'], correctAnswer: 'Cascading Style Sheets' },
+        { text: 'Which method is used to round a number to the nearest integer in JavaScript?', options: ['Math.round()', 'Math.floor()', 'Math.ceil()', 'Math.random()'], correctAnswer: 'Math.round()' },
+        { text: 'How do you declare a JavaScript variable?', options: ['varName', 'var varName', 'variable varName', 'v varName'], correctAnswer: 'var varName' },
+        { text: 'Which HTML tag is used to define an internal style sheet?', options: ['<script>', '<css>', '<style>', '<link>'], correctAnswer: '<style>' }
+    ]
+    const tempList = demoQuestions.map(q => new Question(q.text, q.options, q.correctAnswer));
+    localStorage.setItem('questionList', JSON.stringify(tempList));
+}

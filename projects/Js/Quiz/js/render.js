@@ -1,8 +1,9 @@
-import { listOfQuestions } from "./questions.js";
+import { listOfQuestions, demoQuestions } from "./questions.js";
 import { quiz } from "./quiz.js";
 const startBtn = document.getElementById('start');
 const loadBtn = document.getElementById('load');
 const clearBtn = document.getElementById("clear");
+const demoBtn = document.getElementById("demo");
 
 function displayQuestion() {
     if (quiz.hasEnded()) {
@@ -44,3 +45,7 @@ clearBtn.addEventListener("click", () => {
     localStorage.clear('questionList');
 })
 
+
+
+demoBtn.addEventListener("click", demoQuestions);
+console.log(listOfQuestions);
