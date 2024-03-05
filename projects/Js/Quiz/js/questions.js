@@ -16,12 +16,17 @@ export class Question {
     }
 }
 
-// const questionData = [];
+const questionData = [];
+if (localStorage.getItem("questionList")) {
+    const list = JSON.parse(localStorage.getItem("questionList"));
+    questionData.push(...list)
+}
 
-// const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
-// if (!localStorage.getItem('questionList')) {
-//     localStorage.setItem('questionList', JSON.stringify(tempList));
-// }
+const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
+
+if (!localStorage.getItem('questionList')) {
+    localStorage.setItem('questionList', JSON.stringify(tempList));
+}
 
 let listOfObjects = JSON.parse(localStorage.getItem('questionList'));
 
@@ -29,31 +34,30 @@ export let listOfQuestions = listOfObjects.map(q => new Question(q.text, q.optio
 
 
 
-// addQuestion.addEventListener('click', () => {
-//     //getting user input
-//     const userText = text.value;
-//     const userOptions = options.value.split(",");
-//     const userCorrectAns = correctAns.value;
-//     //if input is valid, push it to the questionsData
-//     if (userOptions.length === 4 && userOptions[3] !== "") {
-//         questionData.push({
-//             text: userText,
-//             options: userOptions,
-//             correctAnswer: userCorrectAns
-//         })
-//         //clear user input
-//         text.value = ""
-//         options.value = ""
-//         correctAns.value = ""
+addQuestion.addEventListener('click', () => {
+    //getting user input
+    const userText = text.value;
+    const userOptions = options.value.split(",");
+    const userCorrectAns = correctAns.value;
+    //if input is valid, push it to the questionsData
+    if (userOptions.length === 4 && userOptions[3] !== "") {
+        questionData.push({
+            text: userText,
+            options: userOptions,
+            correctAnswer: userCorrectAns
+        })
 
-//         //add question to local storage
-//         const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
-//         localStorage.clear('questionList');
-//         localStorage.setItem('questionList', JSON.stringify(tempList));
-//     } else {
-//         alert('must write 4 options and divide them with: ,')
-//     }
-// });
+        //add question to local storage
+        const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
+        localStorage.removeItem('questionList');
+        localStorage.setItem('questionList', JSON.stringify(tempList));
+        text.value = "";
+        options.value = "";
+        correctAns.value = "";
+    } else {
+        alert('must write 4 options and divide them with: ,')
+    }
+});
 
 
 export function demoQuestions() {

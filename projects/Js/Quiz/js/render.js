@@ -5,12 +5,9 @@ const loadBtn = document.getElementById('load');
 const clearBtn = document.getElementById("clear");
 const demoBtn = document.getElementById("demo");
 const domQuiz = document.getElementById("quiz");
+const addBtn = document.getElementById("subnit-inputs");
 const domPresets = document.querySelector('.presets');
 const questionsDisplay = document.getElementById("questions-list");
-const text = document.getElementById("text-input");
-const options = document.getElementById("options-input");
-const correctAns = document.getElementById("correct-ans-input");
-const add = document.getElementById("subnit-inputs");
 
 
 function displayQuestion() {
@@ -81,40 +78,9 @@ clearBtn.addEventListener("click", () => {
 
 demoBtn.addEventListener("click", demoQuestions
 );
-console.log(listOfQuestions);
-
-
-const questionData = [];
-
-const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
-if (!localStorage.getItem('questionList')) {
-    localStorage.setItem('questionList', JSON.stringify(tempList));
-}
 
 
 
-add.addEventListener('click', () => {
-    //getting user input
-    const userText = text.value;
-    const userOptions = options.value.split(",");
-    const userCorrectAns = correctAns.value;
-    //if input is valid, push it to the questionsData
-    if (userOptions.length === 4 && userOptions[3] !== "") {
-        questionData.push({
-            text: userText,
-            options: userOptions,
-            correctAnswer: userCorrectAns
-        })
-        //clear user input
-        text.value = ""
-        options.value = ""
-        correctAns.value = ""
-
-        //add question to local storage
-        const tempList = questionData.map(q => new Question(q.text, q.options, q.correctAnswer));
-        localStorage.clear('questionList');
-        localStorage.setItem('questionList', JSON.stringify(tempList));
-    } else {
-        alert('must write 4 options and divide them with: ,')
-    }
-});
+addBtn.addEventListener("click", () => {
+    location.reload();
+})

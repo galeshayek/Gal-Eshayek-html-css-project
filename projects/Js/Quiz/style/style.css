@@ -118,6 +118,8 @@ h1 {
   background-color: white;
   padding-top: 0;
   border-radius: 0.8rem;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 .presets form h3 {
   width: 100%;
