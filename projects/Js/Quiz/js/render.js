@@ -6,6 +6,7 @@ const clearBtn = document.getElementById("clear");
 const domQuiz = document.getElementById("quiz");
 const domPresets = document.querySelector('.presets');
 const questionsDisplay = document.getElementById("questions-list");
+const demoBtn = document.getElementById("demo");
 
 
 function displayQuestion() {
@@ -70,3 +71,4 @@ clearBtn.addEventListener("click", () => {
     startBtn.setAttribute('disabled', '');
 })
 
+demoBtn.addEventListener("click", demoQuestions)
