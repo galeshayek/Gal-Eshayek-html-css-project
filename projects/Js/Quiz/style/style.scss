@@ -16,6 +16,7 @@ body {
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
+    padding: 8px 0;
 
     button {
         cursor: pointer;
@@ -87,9 +88,11 @@ h1 {
     }
 
     .buttons {
-        display: flex;
-        flex-flow: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
         justify-content: center;
+        align-items: center;
         gap: 1rem;
 
         button {
@@ -98,7 +101,7 @@ h1 {
 
             &:hover,
             &:active {
-                scale: 1.1;
+                translate: 0 -4px;
             }
         }
     }
@@ -142,10 +145,22 @@ h1 {
         background-color: white;
         padding-top: 0;
         border-radius: .8rem;
-        max-height: fit-content;
+        height: fit-content;
 
         h3 {
             width: 100%;
+        }
+
+        label {
+            margin-left: 15px;
+            color: rgb(156, 156, 156);
+            font-size: clamp(.8rem, 1.2vw, 4rem);
+
+            span {
+                color: $c-main;
+                font-weight: bolder;
+                font-size: clamp(1.4rem, 3vw, 6rem);
+            }
         }
 
         input {

@@ -13,6 +13,7 @@ body {
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
+  padding: 8px 0;
 }
 body button {
   cursor: pointer;
@@ -76,9 +77,11 @@ h1 {
   padding-left: 4%;
 }
 #quiz .buttons {
-  display: flex;
-  flex-flow: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 #quiz .buttons button {
@@ -86,7 +89,7 @@ h1 {
   color: #7E43D0;
 }
 #quiz .buttons button:hover, #quiz .buttons button:active {
-  scale: 1.1;
+  translate: 0 -4px;
 }
 
 .presets {
@@ -118,11 +121,21 @@ h1 {
   background-color: white;
   padding-top: 0;
   border-radius: 0.8rem;
-  max-height: -moz-fit-content;
-  max-height: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .presets form h3 {
   width: 100%;
+}
+.presets form label {
+  margin-left: 15px;
+  color: rgb(156, 156, 156);
+  font-size: clamp(0.8rem, 1.2vw, 4rem);
+}
+.presets form label span {
+  color: #7E43D0;
+  font-weight: bolder;
+  font-size: clamp(1.4rem, 3vw, 6rem);
 }
 .presets form input {
   margin: 0 15px;

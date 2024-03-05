@@ -39,7 +39,12 @@ addQuestion.addEventListener('click', () => {
     const userText = text.value;
     const userOptions = options.value.split(",");
     const userCorrectAns = correctAns.value;
-    //if input is valid, push it to the questionsData
+    console.log(userOptions)
+    // if input is valid, push it to the questionsData
+    if (!userOptions.includes(userCorrectAns)) {
+        alert('correct asnwer must be one of the options');
+        return
+    }
     if (userOptions.length === 4 && userOptions[3] !== "") {
         questionData.push({
             text: userText,
@@ -54,9 +59,11 @@ addQuestion.addEventListener('click', () => {
         text.value = "";
         options.value = "";
         correctAns.value = "";
+        location.reload();
     } else {
         alert('must write 4 options and divide them with: ,')
     }
+
 });
 
 

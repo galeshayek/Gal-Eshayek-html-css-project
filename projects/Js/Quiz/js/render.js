@@ -1,11 +1,9 @@
 import { listOfQuestions, demoQuestions, Question } from "./questions.js";
 import { quiz } from "./quiz.js";
 const startBtn = document.getElementById('start');
-const loadBtn = document.getElementById('load');
+// const loadBtn = document.getElementById('load');
 const clearBtn = document.getElementById("clear");
-const demoBtn = document.getElementById("demo");
 const domQuiz = document.getElementById("quiz");
-const addBtn = document.getElementById("subnit-inputs");
 const domPresets = document.querySelector('.presets');
 const questionsDisplay = document.getElementById("questions-list");
 
@@ -56,9 +54,7 @@ startBtn.addEventListener('click', () => {
     displayQuestion();
 })
 
-loadBtn.addEventListener('click', () => {
-    location.reload();
-})
+
 
 let num = 0
 listOfQuestions.forEach(q => {
@@ -74,13 +70,3 @@ clearBtn.addEventListener("click", () => {
     startBtn.setAttribute('disabled', '');
 })
 
-
-
-demoBtn.addEventListener("click", demoQuestions
-);
-
-
-
-addBtn.addEventListener("click", () => {
-    location.reload();
-})
