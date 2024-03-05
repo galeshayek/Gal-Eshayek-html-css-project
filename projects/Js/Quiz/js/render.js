@@ -1,4 +1,4 @@
-import { listOfQuestions, demoQuestions, Question } from "./questions.js";
+import { listOfQuestions, demoQuestions } from "./questions.js";
 import { quiz } from "./quiz.js";
 const startBtn = document.getElementById('start');
 // const loadBtn = document.getElementById('load');
