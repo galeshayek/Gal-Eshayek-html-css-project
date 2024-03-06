@@ -510,7 +510,8 @@ main section.gallery .galleryContainer .project8 {
     min-width: 8vw;
   }
 }
-main section.contact {
+
+section.contact {
   position: relative;
   margin: 10vw 0;
   display: grid;
@@ -518,46 +519,46 @@ main section.contact {
   justify-items: center;
   gap: 2em;
 }
-main section.contact #contactAncor {
+section.contact #contactAncor {
   position: absolute;
   top: -150px;
 }
-main section.contact .textBox {
+section.contact .textBox {
   grid-column: 1/2;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
 }
-main section.contact .textBox :nth-child(3) {
+section.contact .textBox :nth-child(3) {
   margin-top: 0.2rem;
 }
-main section.contact .textBox h3 {
+section.contact .textBox h3 {
   color: #385E72;
   border-bottom: 2px solid #385E72;
   line-height: 2.5;
   text-align: center;
 }
-main section.contact .textBox p {
+section.contact .textBox p {
   text-align: center;
 }
-main section.contact form {
+section.contact form {
   width: 70%;
   grid-column: 2/3;
   display: flex;
   flex-flow: column nowrap;
   gap: 1rem;
 }
-main section.contact form #floatingTextarea {
+section.contact form #floatingTextarea {
   height: 100px;
 }
-main section.contact form .btnBox {
+section.contact form .btnBox {
   position: relative;
   height: 50px;
   width: 155px;
   margin: 20px;
   align-self: center;
 }
-main section.contact form .btnBox a {
+section.contact form .btnBox a {
   position: absolute;
   top: 0;
   left: 0;
@@ -579,7 +580,7 @@ main section.contact form .btnBox a {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
-main section.contact form .btnBox a::before {
+section.contact form .btnBox a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -590,27 +591,27 @@ main section.contact form .btnBox a::before {
   transform: skewX(45deg) translateX(0);
   transition: 0.5s;
 }
-main section.contact form .btnBox:hover::before {
+section.contact form .btnBox:hover::before {
   bottom: 0;
   height: 50%;
   width: 80%;
   border-radius: 30px;
   transition-delay: 0.5s;
 }
-main section.contact form .btnBox:hover::after {
+section.contact form .btnBox:hover::after {
   top: 0;
   height: 50%;
   width: 80%;
   border-radius: 30px;
   transition-delay: 0.5s;
 }
-main section.contact form .btnBox:hover a {
+section.contact form .btnBox:hover a {
   letter-spacing: 3px;
 }
-main section.contact form .btnBox:hover a::before {
+section.contact form .btnBox:hover a::before {
   transform: skewX(45deg) translateX(200%);
 }
-main section.contact form .btnBox::before {
+section.contact form .btnBox::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -622,7 +623,7 @@ main section.contact form .btnBox::before {
   border-radius: 10px;
   transition: 0.5s;
 }
-main section.contact form .btnBox::after {
+section.contact form .btnBox::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -635,26 +636,26 @@ main section.contact form .btnBox::after {
   transition: 0.5s;
   z-index: -1;
 }
-main section.contact form [name=submit] {
+section.contact form [name=submit] {
   cursor: pointer;
   color: #385E72;
 }
-main section.contact .imgBox {
+section.contact .imgBox {
   width: 100%;
 }
-main section.contact .imgBox img {
+section.contact .imgBox img {
   grid-column: 3/4;
   align-self: center;
 }
-main section.contact .btn-img-container {
+section.contact .btn-img-container {
   display: flex;
   justify-content: center;
 }
-main section.contact .btn-img-container img {
+section.contact .btn-img-container img {
   display: none;
 }
 @media (max-width: 576px) {
-  main section.contact {
+  section.contact {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
@@ -662,26 +663,26 @@ main section.contact .btn-img-container img {
     text-align: center;
     gap: 2em;
   }
-  main section.contact .textBox,
-  main section.contact form,
-  main section.contact .imgBox {
+  section.contact .textBox,
+  section.contact form,
+  section.contact .imgBox {
     grid-column: 1/2;
   }
-  main section.contact .textBox {
+  section.contact .textBox {
     grid-row: 1/2;
   }
-  main section.contact form {
+  section.contact form {
     grid-row: 2/3;
     width: 90%;
   }
-  main section.contact .imgBox {
+  section.contact .imgBox {
     display: none;
   }
-  main section.contact .btn-img-container {
+  section.contact .btn-img-container {
     display: flex;
     align-items: center;
   }
-  main section.contact .btn-img-container img {
+  section.contact .btn-img-container img {
     display: block;
     width: auto;
     height: 15vw;

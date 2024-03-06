@@ -311,127 +311,126 @@ main {
             }
         }
 
+    }
+}
+
+section.contact {
+    position: relative;
+    margin: $section-divider 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-items: center;
+    gap: 2em;
+
+    #contactAncor {
+        position: absolute;
+        top: -150px;
+    }
+
+
+    .textBox {
+        grid-column: 1/2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+
+        :nth-child(3) {
+            margin-top: 0.2rem;
+        }
+
+        h3 {
+            color: $complimantry-color;
+            border-bottom: 2px solid $complimantry-color;
+            line-height: 2.5;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+    }
+
+    form {
+        width: 70%;
+        grid-column: 2/3;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+
+        #floatingTextarea {
+            height: 100px;
+        }
+
+        .btnBox {
+            @include btnEffect;
+            align-self: center;
+
+
+        }
+
+        [name="submit"] {
+            cursor: pointer;
+            color: $complimantry-color;
+        }
 
     }
 
-    section.contact {
-        position: relative;
-        margin: $section-divider 0;
+    .imgBox {
+        width: 100%;
+
+        img {
+            grid-column: 3/4;
+            align-self: center;
+        }
+    }
+
+    .btn-img-container {
+        display: flex;
+        justify-content: center;
+
+        img {
+            display: none;
+        }
+    }
+
+    @media (max-width: 576px) {
         display: grid;
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
         justify-items: center;
+        text-align: center;
         gap: 2em;
 
-        #contactAncor {
-            position: absolute;
-            top: -150px;
+
+        .textBox,
+        form,
+        .imgBox {
+            grid-column: 1/2;
         }
 
-
         .textBox {
-            grid-column: 1/2;
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-
-            :nth-child(3) {
-                margin-top: 0.2rem;
-            }
-
-            h3 {
-                color: $complimantry-color;
-                border-bottom: 2px solid $complimantry-color;
-                line-height: 2.5;
-                text-align: center;
-            }
-
-            p {
-                text-align: center;
-            }
+            grid-row: 1/2;
         }
 
         form {
-            width: 70%;
-            grid-column: 2/3;
-            display: flex;
-            flex-flow: column nowrap;
-            gap: 1rem;
-
-            #floatingTextarea {
-                height: 100px;
-            }
-
-            .btnBox {
-                @include btnEffect;
-                align-self: center;
-
-
-            }
-
-            [name="submit"] {
-                cursor: pointer;
-                color: $complimantry-color;
-            }
-
+            grid-row: 2/3;
+            width: 90%;
         }
 
         .imgBox {
-            width: 100%;
-
-            img {
-                grid-column: 3/4;
-                align-self: center;
-            }
+            // grid-row: 3/4;
+            // width: 20vw;
+            display: none;
         }
 
         .btn-img-container {
             display: flex;
-            justify-content: center;
+            align-items: center;
 
             img {
-                display: none;
-            }
-        }
-
-        @media (max-width: 576px) {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(3, auto);
-            justify-items: center;
-            text-align: center;
-            gap: 2em;
-
-
-            .textBox,
-            form,
-            .imgBox {
-                grid-column: 1/2;
-            }
-
-            .textBox {
-                grid-row: 1/2;
-            }
-
-            form {
-                grid-row: 2/3;
-                width: 90%;
-            }
-
-            .imgBox {
-                // grid-row: 3/4;
-                // width: 20vw;
-                display: none;
-            }
-
-            .btn-img-container {
-                display: flex;
-                align-items: center;
-
-                img {
-                    display: block;
-                    width: auto;
-                    height: 15vw;
-                }
+                display: block;
+                width: auto;
+                height: 15vw;
             }
         }
     }
