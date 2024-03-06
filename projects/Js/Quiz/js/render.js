@@ -18,7 +18,11 @@ function displayQuestion() {
         question.options.forEach((option, index) => {
             let optionElement = document.getElementById(`choice${index}`);
             optionElement.innerText = option;
-            optionElement.onclick = () => handleGuess(option)
+
+            optionElement.onclick = () => setTimeout(() => {
+                handleGuess(option)
+
+            }, 250);
         });
     }
 }

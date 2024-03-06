@@ -7,6 +7,18 @@ $c-soft: #dcc3ff;
     box-sizing: border-box;
 }
 
+@keyframes clicked {
+    0% {}
+
+    50% {
+        translate: 0 -6px;
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
 body {
     min-height: 100vh;
     min-height: 100dvh;
@@ -16,7 +28,8 @@ body {
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    padding: 8px 0;
+    padding: 8px;
+    // margin: 0 8px;
 
     button {
         cursor: pointer;
@@ -43,7 +56,7 @@ body {
 
 h1 {
     color: white;
-    font-size: clamp(1rem, 5vw, 9rem);
+    font-size: clamp(2.5rem, 5vw, 9rem);
     text-align: center;
 }
 
@@ -52,18 +65,19 @@ h1 {
     background-color: $c-soft;
     color: $c-main;
 
-    &:hover,
-    &:active {
+    &:hover {
         scale: 1.1;
     }
 
 }
 
 #quiz {
+    height: 80vh;
+    height: 80dvh;
     display: flex;
     flex-flow: column;
     row-gap: 3rem;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
     h2 {
@@ -72,6 +86,8 @@ h1 {
         padding: 1rem 3rem;
         border-radius: 1.5rem;
         font-size: clamp(1.2rem, 2.4vw, 7rem);
+        width: 70vw;
+        width: 70dvw;
     }
 
     input {
@@ -88,20 +104,23 @@ h1 {
     }
 
     .buttons {
+        width: 80vh;
+        width: 80dvh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
         justify-content: center;
-        align-items: center;
+        align-items: end;
+
         gap: 1rem;
 
         button {
+            height: 100%;
             background-color: $c-soft;
             color: $c-main;
 
-            &:hover,
             &:active {
-                translate: 0 -4px;
+                translate: 0 -8px;
             }
         }
     }

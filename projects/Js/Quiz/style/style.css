@@ -4,6 +4,14 @@
   box-sizing: border-box;
 }
 
+@keyframes clicked {
+  50% {
+    translate: 0 -6px;
+  }
+  100% {
+    translate: 0 0;
+  }
+}
 body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -13,7 +21,7 @@ body {
   flex-flow: column;
   justify-content: space-around;
   align-items: center;
-  padding: 8px 0;
+  padding: 8px;
 }
 body button {
   cursor: pointer;
@@ -36,7 +44,7 @@ body button:disabled {
 
 h1 {
   color: white;
-  font-size: clamp(1rem, 5vw, 9rem);
+  font-size: clamp(2.5rem, 5vw, 9rem);
   text-align: center;
 }
 
@@ -44,15 +52,17 @@ h1 {
   background-color: #dcc3ff;
   color: #7E43D0;
 }
-.reload-button:hover, .reload-button:active {
+.reload-button:hover {
   scale: 1.1;
 }
 
 #quiz {
+  height: 80vh;
+  height: 80dvh;
   display: flex;
   flex-flow: column;
   row-gap: 3rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 #quiz h2 {
@@ -61,6 +71,8 @@ h1 {
   padding: 1rem 3rem;
   border-radius: 1.5rem;
   font-size: clamp(1.2rem, 2.4vw, 7rem);
+  width: 70vw;
+  width: 70dvw;
 }
 #quiz input {
   width: clamp(200px, 35vw, 1000px);
@@ -77,19 +89,22 @@ h1 {
   padding-left: 4%;
 }
 #quiz .buttons {
+  width: 80vh;
+  width: 80dvh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   justify-content: center;
-  align-items: center;
+  align-items: end;
   gap: 1rem;
 }
 #quiz .buttons button {
+  height: 100%;
   background-color: #dcc3ff;
   color: #7E43D0;
 }
-#quiz .buttons button:hover, #quiz .buttons button:active {
-  translate: 0 -4px;
+#quiz .buttons button:active {
+  translate: 0 -8px;
 }
 
 .presets {
