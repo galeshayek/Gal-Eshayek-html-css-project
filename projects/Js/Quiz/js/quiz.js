@@ -4,7 +4,6 @@ class Quiz {
     #score = 0;
     questions = [];
     currentQuestionIndex = 0;
-
     constructor(questions) {
         this.questions = questions;
     }

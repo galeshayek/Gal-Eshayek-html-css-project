@@ -7,6 +7,7 @@ const domQuiz = document.getElementById("quiz");
 const domPresets = document.querySelector('.presets');
 const questionsDisplay = document.getElementById("questions-list");
 const demoBtn = document.getElementById("demo");
+const quitQuiz = document.getElementById("quit");
 
 
 function displayQuestion() {
@@ -20,8 +21,7 @@ function displayQuestion() {
             optionElement.innerText = option;
 
             optionElement.onclick = () => setTimeout(() => {
-                handleGuess(option)
-
+                handleGuess(option);
             }, 250);
         });
     }
@@ -59,7 +59,11 @@ startBtn.addEventListener('click', () => {
     displayQuestion();
 })
 
-
+quitQuiz.addEventListener("click", () => {
+    domQuiz.style.display = 'none';
+    domPresets.style.display = 'grid';
+    location.reload();
+})
 
 let num = 0
 listOfQuestions.forEach(q => {
