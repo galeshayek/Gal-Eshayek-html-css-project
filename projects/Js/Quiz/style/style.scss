@@ -118,8 +118,8 @@ h1 {
     }
 
     .buttons {
-        width: 80vh;
-        width: 80dvh;
+        width: 80vw;
+        width: 80dvw;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
