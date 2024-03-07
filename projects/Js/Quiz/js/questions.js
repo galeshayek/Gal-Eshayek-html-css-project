@@ -1,4 +1,4 @@
-
+import { createModal } from "../../@services/utils.js";
 const text = document.getElementById("text-input");
 const options = document.getElementById("options-input");
 const correctAns = document.getElementById("correct-ans-input");
@@ -39,10 +39,12 @@ addQuestion.addEventListener('click', () => {
     const userText = text.value;
     const userOptions = options.value.split(",");
     const userCorrectAns = correctAns.value;
-    console.log(userOptions)
     // if input is valid, push it to the questionsData
     if (!userOptions.includes(userCorrectAns)) {
-        alert('correct asnwer must be one of the options');
+        addQuestion.addEventListener('click', createModal({
+            title: "Alert!",
+            description: 'Correct asnwer must be one of the options',
+        }))
         return
     }
     if (userOptions.length === 4 && userOptions[3] !== "") {
@@ -61,7 +63,11 @@ addQuestion.addEventListener('click', () => {
         correctAns.value = "";
         location.reload();
     } else {
-        alert('must write 4 options and divide them with: ,')
+        addQuestion.addEventListener('click', createModal({
+            title: "Alert!",
+            description: "must write 4 options and divide them with: ,"
+        }))
+
     }
 
 });
