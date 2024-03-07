@@ -1,6 +1,7 @@
-export function createModal({ title = 'Modal Title', description = 'Modal Description', onClose = () => { } }) {
+export function createAlert({ title = 'Alert', description = 'Modal Description', onClose = () => { } }) {
     // Create the modal element
     const modal = document.createElement('div');
+    modal.classList.add('custom-alert');
     modal.style.position = 'fixed';
     modal.style.top = '50%';
     modal.style.left = '50%';
@@ -26,12 +27,13 @@ export function createModal({ title = 'Modal Title', description = 'Modal Descri
 
     // Close button
     const closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
     closeButton.textContent = 'Close';
-    closeButton.style.cursor = 'pointer'
-    closeButton.style.border = '0'
-    closeButton.style.padding = '3% 5%'
-    closeButton.style.borderRadius = '10px'
-    closeButton.style.transition = '250ms ease'
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.border = '0';
+    closeButton.style.padding = '3% 5%';
+    closeButton.style.borderRadius = '10px';
+    closeButton.style.transition = '250ms ease';
     closeButton.addEventListener('mouseenter', () => {
         closeButton.style.scale = '1.05'
     })

@@ -17,6 +17,10 @@ body {
     align-items: center;
 }
 
+/* .modal button {
+    background-color: red;
+} */
+
 h1 {
     font-size: clamp(2rem, 2vw, 8rem);
 }

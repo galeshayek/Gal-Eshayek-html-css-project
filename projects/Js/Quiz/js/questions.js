@@ -1,4 +1,4 @@
-import { createModal } from "../../@services/utils.js";
+import { createAlert } from "../../@services/utils.js";
 const text = document.getElementById("text-input");
 const options = document.getElementById("options-input");
 const correctAns = document.getElementById("correct-ans-input");
@@ -41,7 +41,7 @@ addQuestion.addEventListener('click', () => {
     const userCorrectAns = correctAns.value;
     // if input is valid, push it to the questionsData
     if (!userOptions.includes(userCorrectAns)) {
-        addQuestion.addEventListener('click', createModal({
+        addQuestion.addEventListener('click', createAlert({
             title: "Alert!",
             description: 'Correct asnwer must be one of the options',
         }))
@@ -63,7 +63,7 @@ addQuestion.addEventListener('click', () => {
         correctAns.value = "";
         location.reload();
     } else {
-        addQuestion.addEventListener('click', createModal({
+        addQuestion.addEventListener('click', createAlert({
             title: "Alert!",
             description: "must write 4 options and divide them with: ,"
         }))

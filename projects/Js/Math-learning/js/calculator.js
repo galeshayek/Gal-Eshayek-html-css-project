@@ -1,3 +1,4 @@
+import { createAlert } from "../../@services/utils.js";
 const button = document.getElementById("checkAnswer");
 const numRange = document.getElementById("numRange");
 const operatorRange = document.getElementById("operatorRange");
@@ -70,8 +71,12 @@ button.addEventListener("click", () => {
     //input validation
     const nptValue = userInput.value;
     console.log(+nptValue);
-    if (isNaN(+nptValue)) {
-        alert("Answer must be a number");
+    if (nptValue == "" || isNaN(+nptValue)) {
+        button.addEventListener('click', createAlert({
+            description: 'Answer must be a number'
+        }))
+        const closeButton = document.querySelector('.close-button');
+        closeButton.setAttribute('class', 'btn btn-warning');
         return
     }
     // calculates the currect answer
