@@ -73,7 +73,9 @@ button.addEventListener("click", () => {
     console.log(+nptValue);
     if (nptValue == "" || isNaN(+nptValue)) {
         button.addEventListener('click', createAlert({
-            description: 'Answer must be a number'
+            title: '!תקלה',
+            description: 'תשובה חייבת להיות מספר',
+            btnText: 'סגור'
         }))
         const closeButton = document.querySelector('.close-button');
         closeButton.setAttribute('class', 'btn btn-warning');

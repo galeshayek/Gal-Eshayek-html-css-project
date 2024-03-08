@@ -1,4 +1,4 @@
-export function createAlert({ title = 'Alert', description = 'Modal Description', onClose = () => { } }) {
+export function createAlert({ title = 'Alert', description = 'Modal Description', btnText = 'close', onClose = () => { } }) {
     //prevent clicking outside modal
     const canvas = document.createElement("div");
     canvas.style.position = 'absolute';
@@ -25,6 +25,7 @@ export function createAlert({ title = 'Alert', description = 'Modal Description'
     // Add title
     const titleElement = document.createElement('h2');
     titleElement.textContent = title;
+    titleElement.style.textAlign = 'center'
     modal.appendChild(titleElement);
 
     // Add description
@@ -36,7 +37,7 @@ export function createAlert({ title = 'Alert', description = 'Modal Description'
     // Close button
     const closeButton = document.createElement('button');
     closeButton.classList.add('close-button');
-    closeButton.textContent = 'Close';
+    closeButton.textContent = btnText;
     closeButton.style.cursor = 'pointer';
     closeButton.style.border = '0';
     closeButton.style.padding = '3% 5%';
