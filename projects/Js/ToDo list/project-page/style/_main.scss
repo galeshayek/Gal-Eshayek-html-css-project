@@ -1,0 +1,204 @@
+main {
+    display: flex;
+    flex-flow: column;
+
+    .btnBox {
+        @include btnEffectLight;
+        z-index: 1;
+    }
+
+    .text-container {
+        padding: 2rem 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        background-color: $complimantry-color;
+        color: $misty-light;
+
+        h1 {
+            color: $misty-light;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-flow: row;
+        }
+    }
+
+    .icons-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3vw;
+        padding-top: 2rem;
+
+        img {
+            width: 7vw;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                scale: 1.1;
+            }
+        }
+    }
+
+    .project-container {
+        display: flex;
+        margin: $section-divider 0;
+        align-self: center;
+        justify-self: center;
+        width: 50vw;
+        box-shadow: 0px 0px 10px 7px rgba(36, 36, 36, 0.25);
+
+        .project {
+            width: 60vw;
+            height: 30vw;
+            background-image: url(../assets/projectImage.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease-in-out;
+
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #242424;
+                opacity: 0;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &:hover::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #242424;
+                opacity: 0.5;
+            }
+
+            .btnBox {
+                // transition: all 0.5s ease-in-out;
+                opacity: 0;
+                cursor: pointer;
+                scale: 1.3;
+            }
+
+        }
+
+        &:hover {
+            .btnBox {
+                opacity: 1;
+                position: relative;
+            }
+        }
+
+    }
+
+    .phone-btn {
+        display: none;
+    }
+
+    @media (max-width: 575px) {
+        .text-container {
+            p {
+                width: 90vw;
+            }
+        }
+
+        nav {
+            height: auto;
+
+            a {
+                p {
+                    display: flex;
+                    align-self: center;
+                }
+            }
+
+            .navbar-toggler {
+                align-self: end;
+            }
+
+
+
+            .navbar-collapse {
+                direction: rtl;
+                translate: 0 0;
+                padding: 10px 0;
+            }
+
+            li {
+                width: 7em;
+                height: 2em;
+                line-height: 2;
+                text-align: center;
+                text-transform: uppercase;
+                background: linear-gradient(to left, $complimantry-color 50%, transparent 50%);
+                background-size: 200% 100%;
+                background-position: 0 0;
+                transition: background-position 0.4s, color 0.4s;
+                border-radius: 0.7em 0 0 0.7em;
+                cursor: pointer;
+
+                &:hover {
+                    background-position: 100% 0;
+
+                    a {
+                        color: $background-color;
+                    }
+                }
+            }
+        }
+
+        .btn-group {
+            width: 95vw;
+            justify-content: center;
+        }
+
+        .icons-container {
+            gap: 2rem;
+
+            img {
+                width: 15vw;
+            }
+        }
+
+        .project-container {
+            width: auto;
+
+            .project {
+                width: 90dvw;
+                height: 45dvw;
+
+                &::before {
+                    display: none;
+                }
+
+                .btnBox {
+                    display: none;
+                }
+
+            }
+
+        }
+
+        .phone-btn {
+            display: block;
+            @include btnEffect;
+            margin: 0 auto;
+            margin-bottom: $section-divider;
+        }
+    }
+}
