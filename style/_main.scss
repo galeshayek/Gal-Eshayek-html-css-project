@@ -289,7 +289,7 @@ main {
 
             .my-carousel {
                 width: 100%;
-                aspect-ratio: 2/1;
+                aspect-ratio: 3/2;
                 position: relative;
 
                 ul {
@@ -326,10 +326,11 @@ main {
                     right: 0;
                     background-color: $complimantry-color;
                     color: $misty-light;
-                    height: 30%;
+                    height: 40%;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: space-evenly;
+
 
                     h4 {
                         font-size: $h3;
@@ -339,14 +340,16 @@ main {
                         font-size: $p;
                     }
 
-                    .btnBox {
-                        margin: 0 auto;
-                        scale: 0.8;
 
-                        a {
-                            color: $misty-light;
-                        }
+                    a {
+                        margin: 0 auto;
+                        padding: 1%;
+                        border-radius: 15px;
+                        width: 20%;
+                        background-color: $background-color;
+                        color: $misty-light;
                     }
+
                 }
             }
 

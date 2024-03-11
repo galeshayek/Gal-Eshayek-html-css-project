@@ -508,7 +508,7 @@ main section.gallery .js-carousel *::after {
 }
 main section.gallery .js-carousel .my-carousel {
   width: 100%;
-  aspect-ratio: 2/1;
+  aspect-ratio: 3/2;
   position: relative;
 }
 main section.gallery .js-carousel .my-carousel ul {
@@ -543,10 +543,10 @@ main section.gallery .js-carousel .slide .content {
   right: 0;
   background-color: #385E72;
   color: #D9E4EC;
-  height: 30%;
+  height: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 main section.gallery .js-carousel .slide .content h4 {
   font-size: clamp(1.7rem, 2.3vw, 5rem);
@@ -554,11 +554,12 @@ main section.gallery .js-carousel .slide .content h4 {
 main section.gallery .js-carousel .slide .content p {
   font-size: clamp(1rem, 1.6vw, 2rem);
 }
-main section.gallery .js-carousel .slide .content .btnBox {
+main section.gallery .js-carousel .slide .content a {
   margin: 0 auto;
-  scale: 0.8;
-}
-main section.gallery .js-carousel .slide .content .btnBox a {
+  padding: 1%;
+  border-radius: 15px;
+  width: 20%;
+  background-color: #79C4F2;
   color: #D9E4EC;
 }
 main section.gallery .js-carousel .my-carousel-button {
