@@ -590,6 +590,7 @@ main section.gallery .js-carousel .my-carousel-button.next {
 }
 @media (max-width: 768px) {
   main section.gallery .js-carousel .my-carousel {
+    margin-top: -80px;
     height: 90vh;
     height: 90dvh;
   }
