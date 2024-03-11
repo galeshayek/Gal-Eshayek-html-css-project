@@ -486,11 +486,12 @@ section.contact {
             height: 100px;
         }
 
+
         .btnBox {
+            background-color: #ffffff00;
+            border: 0;
             @include btnEffect;
             align-self: center;
-
-
         }
 
         [name="submit"] {
