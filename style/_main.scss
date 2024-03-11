@@ -300,7 +300,6 @@ main {
             }
 
             .slide {
-                border: 1px solid #000;
                 position: absolute;
                 inset: 0;
                 opacity: 0;
@@ -356,7 +355,7 @@ main {
                 z-index: 2;
                 background: none;
                 border: none;
-                font-size: 4rem;
+                font-size: $h1;
                 top: 50%;
                 transform: translateY(-50%);
                 color: rgba(255, 255, 255, .5);
@@ -381,6 +380,26 @@ main {
 
                 &.next {
                     right: 1rem;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .my-carousel {
+                    height: 90vh;
+                    height: 90dvh;
+                }
+
+                .slide {
+                    img {
+                        object-fit: contain;
+                    }
+
+                    .content {
+                        height: 40%;
+                    }
+
+
+
                 }
             }
         }

@@ -517,7 +517,6 @@ main section.gallery .js-carousel .my-carousel ul {
   list-style: none;
 }
 main section.gallery .js-carousel .slide {
-  border: 1px solid #000;
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -567,7 +566,7 @@ main section.gallery .js-carousel .my-carousel-button {
   z-index: 2;
   background: none;
   border: none;
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 4vw, 7rem);
   top: 50%;
   transform: translateY(-50%);
   color: rgba(255, 255, 255, 0.5);
@@ -588,6 +587,19 @@ main section.gallery .js-carousel .my-carousel-button.prev {
 }
 main section.gallery .js-carousel .my-carousel-button.next {
   right: 1rem;
+}
+@media (max-width: 768px) {
+  main section.gallery .js-carousel .my-carousel {
+    height: 90vh;
+    height: 90dvh;
+  }
+  main section.gallery .js-carousel .slide img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+  main section.gallery .js-carousel .slide .content {
+    height: 40%;
+  }
 }
 @media (max-width: 768px) {
   main section.gallery .galleryContainer {
