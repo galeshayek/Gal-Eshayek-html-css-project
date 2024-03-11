@@ -17,13 +17,13 @@ body img {
   width: 100%;
   height: auto;
 }
-body .btn-main {
+body .btnBox {
   position: relative;
   height: 50px;
   width: 155px;
   margin: 20px;
 }
-body .btn-main a {
+body .btnBox a {
   position: absolute;
   top: 0;
   left: 0;
@@ -45,7 +45,7 @@ body .btn-main a {
   -webkit-backdrop-filter: blur(15px);
           backdrop-filter: blur(15px);
 }
-body .btn-main a::before {
+body .btnBox a::before {
   content: "";
   position: absolute;
   top: 0;
@@ -56,27 +56,27 @@ body .btn-main a::before {
   transform: skewX(45deg) translateX(0);
   transition: 0.5s;
 }
-body .btn-main:hover::before {
+body .btnBox:hover::before {
   bottom: 0;
   height: 50%;
   width: 80%;
   border-radius: 30px;
   transition-delay: 0.5s;
 }
-body .btn-main:hover::after {
+body .btnBox:hover::after {
   top: 0;
   height: 50%;
   width: 80%;
   border-radius: 30px;
   transition-delay: 0.5s;
 }
-body .btn-main:hover a {
+body .btnBox:hover a {
   letter-spacing: 3px;
 }
-body .btn-main:hover a::before {
+body .btnBox:hover a::before {
   transform: skewX(45deg) translateX(200%);
 }
-body .btn-main::before {
+body .btnBox::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -88,7 +88,7 @@ body .btn-main::before {
   border-radius: 10px;
   transition: 0.5s;
 }
-body .btn-main::after {
+body .btnBox::after {
   content: "";
   position: absolute;
   left: 50%;
