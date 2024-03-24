@@ -205,6 +205,10 @@ main {
             font-size: $card;
         }
 
+        .projects-header-js {
+            padding-top: $section-divider;
+        }
+
         .galleryContainer {
             display: grid;
             margin: 0 auto;

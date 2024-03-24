@@ -445,6 +445,9 @@ main section.gallery .projects-header {
 main section.gallery p {
   font-size: clamp(1rem, 1.4vw, 2rem);
 }
+main section.gallery .projects-header-js {
+  padding-top: 10vw;
+}
 main section.gallery .galleryContainer {
   display: grid;
   margin: 0 auto;
