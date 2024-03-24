@@ -288,9 +288,12 @@ main {
 
 
             .my-carousel {
-                width: 100%;
+                width: 70%;
+                margin: 0 auto;
                 aspect-ratio: 3/2;
                 position: relative;
+                border: 3px solid $complimantry-color;
+                border-radius: 19px;
 
                 ul {
                     margin: 0;
@@ -306,6 +309,8 @@ main {
                 transition: 300ms opacity ease-in-out;
 
                 img {
+                    // border-radius: calc(1rem + 3px);
+                    border-radius: 1rem;
                     display: block;
                     width: 100%;
                     height: 100%;
@@ -319,6 +324,7 @@ main {
                 }
 
                 .content {
+                    border-radius: 0 0 1rem 1rem;
                     text-align: center;
                     position: absolute;
                     bottom: 0;

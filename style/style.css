@@ -507,9 +507,12 @@ main section.gallery .js-carousel *::after {
   box-sizing: border-box;
 }
 main section.gallery .js-carousel .my-carousel {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   aspect-ratio: 3/2;
   position: relative;
+  border: 3px solid #385E72;
+  border-radius: 19px;
 }
 main section.gallery .js-carousel .my-carousel ul {
   margin: 0;
@@ -523,6 +526,7 @@ main section.gallery .js-carousel .slide {
   transition: 300ms opacity ease-in-out;
 }
 main section.gallery .js-carousel .slide img {
+  border-radius: 1rem;
   display: block;
   width: 100%;
   height: 100%;
@@ -536,6 +540,7 @@ main section.gallery .js-carousel .slide[data-active] {
   z-index: 1;
 }
 main section.gallery .js-carousel .slide .content {
+  border-radius: 0 0 1rem 1rem;
   text-align: center;
   position: absolute;
   bottom: 0;
