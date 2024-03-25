@@ -525,7 +525,7 @@ main section.gallery .galleryContainer .project8 {
     gap: 1em;
   }
   main section.gallery .galleryContainer [class^=project] ul {
-    width: 40%;
+    width: 80%;
   }
   main section.gallery .galleryContainer [class^=project] ul li img {
     min-width: 8vw;
