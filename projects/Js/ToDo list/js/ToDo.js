@@ -26,7 +26,6 @@ function addToList() {
         isDone: false
     }
     ToDos.push(item);
-    console.log(ToDos);
     localStorage.setItem('ToDo list', JSON.stringify(ToDos));
     //render only the last todo from the list
     render(ToDos, (ToDos.length - 1));
@@ -109,7 +108,6 @@ function removeToDo(e) {
         ToDos.splice(index, 1);
 
         const todo = document.getElementById(id);
-        console.log(todo);
         listIsDone.removeChild(todo);
         localStorage.setItem('ToDo list', JSON.stringify(ToDos));
     }

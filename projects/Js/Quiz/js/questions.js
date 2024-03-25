@@ -1,4 +1,4 @@
-import { createAlert } from "../../@services/utils.js";
+import createAlert from "../../@services/utils.js";
 const text = document.getElementById("text-input");
 const options = document.getElementById("options-input");
 const correctAns = document.getElementById("correct-ans-input");

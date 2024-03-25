@@ -10,7 +10,6 @@ keys.addEventListener('click', (click) => {
         const buttonValue = click.target.value;
         if (buttonValue !== 'AC' && buttonValue !== '=') {
             display.value += buttonValue;
-            console.log(buttonValue);
         } else if (display.value == "undefined") {
             display.value = "";
         }

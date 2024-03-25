@@ -1,4 +1,4 @@
-import { createAlert } from "../../@services/utils.js";
+import createAlert from "../../@services/utils.js";
 const button = document.getElementById("checkAnswer");
 const numRange = document.getElementById("numRange");
 const operatorRange = document.getElementById("operatorRange");
@@ -70,7 +70,6 @@ operatorRange.addEventListener('change', () => {
 button.addEventListener("click", () => {
     //input validation
     const nptValue = userInput.value;
-    console.log(+nptValue);
     if (nptValue == "" || isNaN(+nptValue)) {
         button.addEventListener('click', createAlert({
             title: '!תקלה',
