@@ -19,5 +19,8 @@ const search = () => {
 const reset = () => {
     countries = [...countriesFull];
 }
+
+
+
 export { countries, search, reset };
 

@@ -28,9 +28,19 @@ const createCard = (country) => {
     cardTitle.className = 'card-title';
     cardTitle.textContent = country.name.common;
 
+    const capital = document.createElement('p');
+    capital.className = 'card-text';
+    capital.textContent = `Capital: ${country.capital}`;
+
     const population = document.createElement('p');
     population.className = 'card-text';
     population.textContent = `Population: ${country.population}`;
+
+    const region = document.createElement('p');
+    region.className = 'card-text';
+    region.textContent = `Region: ${country.region}`;
+
+
 
     const cardFooter = document.createElement('div');
     cardFooter.className = 'card-footer d-flex justify-content-center mb-2';
@@ -57,7 +67,9 @@ const createCard = (country) => {
     card.appendChild(cardImg);
 
     cardBody.appendChild(cardTitle);
+    cardBody.appendChild(capital);
     cardBody.appendChild(population);
+    cardBody.appendChild(region);
 
     cardFooter.appendChild(heart);
 
