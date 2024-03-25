@@ -625,6 +625,7 @@ main section.gallery .js-carousel .my-carousel-button.next {
 }
 
 section.contact {
+  position: relative;
   margin: 10vw 0;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;

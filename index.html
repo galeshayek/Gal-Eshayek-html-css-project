@@ -19,7 +19,7 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="./assets/sitelogo-02.webp" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="./js/form.js" defer></script>
+    <script src="./js/form.js" type="module"></script>
 </head>
 
 <body>
@@ -382,50 +382,50 @@
                     </div>
                 </div>
             </div>
-            <section class="contact">
-                <span id="contactAncor"></span>
-                <div class="textBox">
-                    <h3>Get in touch</h3>
-                    <p>
-                        Ready to start a project or curious about my work? I'm just a message away. Reach out for
-                        collaborations, job
-                        opportunities, or even to swap developer tales. Fill out the form and let's connect to create
-                        something
-                        extraordinary together.
-                    </p>
+        </section>
+        <section class="contact">
+            <span id="contactAncor"></span>
+            <div class="textBox">
+                <h3>Get in touch</h3>
+                <p>
+                    Ready to start a project or curious about my work? I'm just a message away. Reach out for
+                    collaborations, job
+                    opportunities, or even to swap developer tales. Fill out the form and let's connect to create
+                    something
+                    extraordinary together.
+                </p>
+            </div>
+            <form>
+
+                <div class="form-floating mb-3">
+                    <input type="name" class="form-control" id="floatingInputName" placeholder="full name">
+                    <label for="floatingInputName">Full name</label>
                 </div>
-                <form>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
+                    <label for="floatingInputEmail">Email address</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="tel" class="form-control" id="floatingInputPhone" placeholder="phone number">
+                    <label for="floatingInputPhone">Phone number</label>
+                </div>
 
-                    <div class="form-floating mb-3">
-                        <input type="name" class="form-control" id="floatingInputName" placeholder="full name">
-                        <label for="floatingInputName">Full name</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInputEmail" placeholder="name@example.com">
-                        <label for="floatingInputEmail">Email address</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="tel" class="form-control" id="floatingInputPhone" placeholder="phone number">
-                        <label for="floatingInputPhone">Phone number</label>
-                    </div>
-
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Leave a comment here"
-                            id="floatingTextarea"></textarea>
-                        <label for="floatingTextarea">Your request</label>
-                    </div>
-                    <div class="btn-img-container">
-                        <button class="btnBox" role="button" id="submit-form">
-                            <label for="submit-form"></label>
-                            <a name="submit">submit</a>
-                        </button>
-                        <img src="./assets/contact.webp" alt="message pop-ups image">
-                    </div>
-                </form>
-                <div class="imgBox">
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Your request</label>
+                </div>
+                <div class="btn-img-container">
+                    <button class="btnBox" role="button" type="button" id="submit-form">
+                        <label for="submit-form"></label>
+                        <a name="submit">submit</a>
+                    </button>
                     <img src="./assets/contact.webp" alt="message pop-ups image">
                 </div>
-            </section>
+            </form>
+            <div class="imgBox">
+                <img src="./assets/contact.webp" alt="message pop-ups image">
+            </div>
+        </section>
     </main>
 
     <footer>

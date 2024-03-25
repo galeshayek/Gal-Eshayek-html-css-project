@@ -1,4 +1,4 @@
-export function createAlert({ title = 'Alert', description = 'Modal Description', btnText = 'close', onClose = () => { } }) {
+export default function createAlert({ title = 'Alert', description = '', btnText = 'close', onClose = () => { } }) {
     //prevent clicking outside modal
     const canvas = document.createElement("div");
     canvas.style.position = 'absolute';

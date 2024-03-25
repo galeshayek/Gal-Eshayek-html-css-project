@@ -453,7 +453,7 @@ main {
 }
 
 section.contact {
-    // position: relative;
+    position: relative;
     margin: $section-divider 0;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
