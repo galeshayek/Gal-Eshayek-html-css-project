@@ -298,6 +298,12 @@ main {
             }
         }
 
+        .jsGallery {
+            grid-template:
+                "p1 p2 p2 p3"
+                "p4 p4 p5 p5"
+                "p6 p6 p7 p7";
+        }
 
         @media (max-width: 768px) {
             .galleryContainer {
