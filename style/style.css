@@ -234,9 +234,9 @@ main section.hero .iconsContainer {
   grid-row: 2/3;
   grid-column: 1/4;
   height: 200px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
   align-items: center;
   gap: 1rem;
 }

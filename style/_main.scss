@@ -9,10 +9,6 @@ main {
         grid-template-rows: repeat(2, auto);
         gap: 2em;
         color: $primary-color;
-        // background-image: url(../assets/bgplain.jpg);
-        // background-repeat: no-repeat;
-        // background-position: top;
-        // background-size: cover;
 
         .hero-image {
             width: 25vw;
@@ -43,9 +39,9 @@ main {
             grid-row: 2/3;
             grid-column: 1/4;
             height: 200px;
-            display: flex;
-            flex-flow: row nowrap;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            justify-items: center;
             align-items: center;
             gap: 1rem;
 
