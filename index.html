@@ -20,6 +20,7 @@
     <link rel="shortcut icon" href="./assets/sitelogo-02.webp" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="./js/form.js" type="module"></script>
+    <script src="./js/gallery.js" defer></script>
 </head>
 
 <body>
@@ -114,9 +115,14 @@
         <section class="gallery ">
             <span id="galleryAncor"></span>
             <h2>Gallery</h2>
+            <div class="btn-wrapper" id="btn-wrapper">
+                <button id="All-btn">All projects</button>
+                <button id="html-btn">html projects</button>
+                <button id="js-btn">JavaScript projects</button>
+            </div>
             <!-- html projects -->
-            <h3 class="projects-header">html & css projects</h3>
-            <div class="galleryContainer">
+            <h3 class="projects-header" id="html-projects-header">html & css projects</h3>
+            <div class="galleryContainer" id="htmlGallery">
                 <div class="project1 card border-2 rounded-4 text-center">
                     <img src="./assets/./projects/project-coffe-Image.webp" alt="project preview image"
                         class="card-img-top rounded-top-4">
@@ -268,8 +274,8 @@
             </div>
 
             <!-- js project -->
-            <h3 class="projects-header projects-header-js">JavaScript projects</h3>
-            <div class="galleryContainer jsGallery">
+            <h3 class="projects-header" id="projects-header-js">JavaScript projects</h3>
+            <div class="galleryContainer jsGallery" id="jsGallery">
                 <div class="project1 card border-2 rounded-4 text-center">
                     <img src="./assets/./projects/js-projects/calculator.jpeg" alt="project preview image"
                         class="card-img-top rounded-top-4">
