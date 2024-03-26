@@ -124,6 +124,6 @@ listIsDone.addEventListener('click', toggleTodoDone);
 listIsDone.addEventListener('click', removeToDo);
 //Delete and Refresh list
 clearBtn.addEventListener('click', () => {
-    localStorage.clear('ToDo list')
+    localStorage.removeItem('ToDo list')
     window.location.reload();
 });
